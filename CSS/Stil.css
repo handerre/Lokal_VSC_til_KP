@@ -1,0 +1,13 @@
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+/* Her er en kommentar om her stiler jeg p taggen */
+p {
+  font-family: verdana;
+  font-size: 20px;
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="no">
+	<head>
+		<meta charset="utf-8" />
+		<title>Enkel index</title>
+		<style>
+			:root{font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;color:#222}
+			body{margin:0;display:flex;flex-direction:column;min-height:100vh;background:#f7fbff}
+			header{background:#0b67ff;color:#fff;padding:1.25rem 1rem}
+			.container{max-width:900px;margin:2rem auto;padding:0 1rem}
+			h1{margin:.25rem 0;font-size:1.6rem}
+			p.lead{color:#133353}
+			nav a{color:#cfe3ff;margin-right:1rem;text-decoration:none}
+			.card{background:#fff;padding:1rem;border-radius:8px;box-shadow:0 6px 18px rgba(8,28,62,0.06)}
+			.mt{margin-top:1rem}
+			footer{margin-top:auto;padding:1rem;text-align:center;color:#666;font-size:.9rem}
+			.meta{font-size:.9rem;color:#556}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<h1>Velkommen</h1>
+				<nav>
+					<a href="#om">Om</a>
+					<a href="#eksempler">Eksempler</a>
+					<a href="#kontakt">Kontakt</a>
+				</nav>
+			</div>
+		</header>
+
+		<main class="container">
+			<section class="card">
+				<h2>En enkel index-side</h2>
+				<p class="lead">Dette er en liten, ferdiglaget index du kan bruke som utgangspunkt. Den har enkel styling og et par lenker.</p>
+				<p class="meta">Dagens dato/tid: <span id="now">—</span></p>
+			</section>
+
+			<section id="om" class="card mt">
+				<h3>Om denne siden</h3>
+				<p>Siden er ment som en startmal: legg til egne seksjoner, bilder eller lenker videre.</p>
+			</section>
+
+			<section id="eksempler" class="card mt">
+				<h3>Eksempler</h3>
+				<ul>
+					<li>Statisk innhold</li>
+					<li>Enkel klient-side JavaScript</li>
+					<li>Responsiv enkel CSS</li>
+				</ul>
+			</section>
+
+			<section id="kontakt" class="card mt">
+				<h3>Kontakt</h3>
+				<p>Bytt ut dette med kontaktinfo eller et skjema etter behov.</p>
+			</section>
+		</main>
+
+		<footer>
+			<div class="container">Lagret i <code>Test.html</code> · Enkel index · <small>Auto</small></div>
+		</footer>
+
+		
+	</body>
+</html>
