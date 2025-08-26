@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Enkel HTML-side med div og span" />
+  <title>Ikke-semantisk HTML – Enkel versjon</title>
+  <link rel="stylesheet" href="CSS/IKKE_semantisk.css">
+</head>
+<body>
+  <div class="header">
+    <h1><span>Ikke-semantisk HTML</span></h1>
+    <div class="nav" aria-label="Meny">
+      <ul>
+        <li><a href="#om">Om</a></li>
+        <li><a href="#artikler">Artikler</a></li>
+        <li><a href="#forklaring">Forklaring</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="main" id="innhold">
+    <div class="section" id="om">
+      <h2><span>Hva er ikke-semantisk HTML?</span></h2>
+      <p>
+        Ikke-semantisk HTML betyr at man bruker generelle elementer som <code>&lt;div&gt;</code> og <code>&lt;span&gt;</code> uten at de forteller noe om innholdets rolle.
+      </p>
+    </div>
+
+    <div class="section" id="artikler">
+      <h2><span>Artikler</span></h2>
+      <div class="article">
+        <h3><span>Bruk av &lt;div&gt; til alt</span></h3>
+        <p>
+          <code>&lt;div&gt;</code> brukes ofte til struktur, selv om det ikke gir informasjon om hva innholdet representerer.
+        </p>
+      </div>
+      <div class="article">
+        <h3><span>Bruk av &lt;span&gt;</span></h3>
+        <p>
+          <code>&lt;span&gt;</code> brukes til å merke deler av tekst, men uten noen semantisk mening utover styling eller gruppering.
+        </p>
+      </div>
+    </div>
+
+    <div class="section" id="forklaring">
+      <h2><span>Forklaring og sammenligning</span></h2>
+      <p>
+        Bruk av kun <code>&lt;div&gt;</code> og <code>&lt;span&gt;</code> gjør at koden ikke forteller noe om strukturen på innholdet.
+      </p>
+      <h3>Fordeler</h3>
+      <ul>
+        <li>Raskt og enkelt å bruke</li>
+        <li>Greit for enkle prototyper</li>
+      </ul>
+      <h3>Ulemper</h3>
+      <ul>
+        <li>Dårlig tilgjengelighet for skjermlesere</li>
+        <li>Dårlig SEO</li>
+        <li>Mindre lesbar kode</li>
+      </ul>
+      <h3>Sammenlignet med semantisk HTML</h3>
+      <p>
+        Der semantiske elementer beskriver meningen med innhold, er <code>&lt;div&gt;</code> og <code>&lt;span&gt;</code> nøytrale og gir ingen ekstra informasjon utover struktur og stil.
+      </p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>&copy; <time datetime="2025">2025</time> Ikke-semantisk HTML – Enkel versjon</p>
+  </div>
+</body>
+</html>
