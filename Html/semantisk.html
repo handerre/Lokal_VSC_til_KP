@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Enkel semantisk HTML-side med forklaring" />
+  <title>Semantisk HTML – Enkel versjon</title>
+  <link rel="stylesheet" href="CSS/semantisk.css">
+</head>
+<body>
+  <header>
+    <h1>Semantisk HTML</h1>
+    <nav aria-label="Hovedmeny">
+      <ul>
+        <li><a href="#om">Om</a></li>
+        <li><a href="#artikler">Artikler</a></li>
+        <li><a href="#forklaring">Forklaring</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="innhold">
+    <section id="om">
+      <h2>Hva er semantisk HTML?</h2>
+      <p>
+        Semantisk HTML betyr å bruke elementer som beskriver innholdets rolle, f.eks. <code>&lt;header&gt;</code> for toppseksjon, <code>&lt;nav&gt;</code> for navigasjon og <code>&lt;footer&gt;</code> for bunntekst.
+      </p>
+    </section>
+
+    <section id="artikler">
+      <h2>Artikler</h2>
+      <article>
+        <h3>Bruk av &lt;section&gt; vs. &lt;div&gt;</h3>
+        <p>
+          <code>&lt;section&gt;</code> brukes for tematiske grupper med overskrift, mens <code>&lt;div&gt;</code> er nøytralt og brukes kun når ingen andre elementer passer.
+        </p>
+      </article>
+      <article>
+        <h3>Når passer &lt;aside&gt;?</h3>
+        <p>
+          <code>&lt;aside&gt;</code> brukes for innhold som er relatert, men ikke hoveddelen, som tips eller ekstra informasjon.
+        </p>
+      </article>
+    </section>
+
+    <section id="forklaring">
+      <h2>Forklaring på semantisk HTML</h2>
+      <p>
+        Semantisk HTML betyr at man bruker HTML-elementer som beskriver <strong>meningen</strong> med innholdet, i stedet for bare utseendet. Eksempler er <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code> og <code>&lt;footer&gt;</code>.
+      </p>
+      <h3>Fordeler</h3>
+      <ul>
+        <li>Bedre tilgjengelighet for skjermlesere</li>
+        <li>Bedre SEO (søkemotoroptimalisering)</li>
+        <li>Mer lesbar og forutsigbar kode</li>
+        <li>Standardisert struktur</li>
+      </ul>
+      <h3>Ulemper</h3>
+      <ul>
+        <li>Litt læringskurve</li>
+        <li>Kan misbrukes hvis feil elementer velges</li>
+        <li>Overkill for svært enkle sider</li>
+      </ul>
+      <h3>Alternativet: Ikke-semantisk HTML</h3>
+      <p>
+        Det motsatte er å bruke generelle elementer som <code>&lt;div&gt;</code> og <code>&lt;span&gt;</code> til nesten alt. Fordelen er at det er raskt og enkelt, men ulempen er at koden blir mindre tilgjengelig og dårligere forstått av søkemotorer.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <time datetime="2025">2025</time> Semantisk HTML – Enkel versjon</p>
+  </footer>
+</body>
+</html>
