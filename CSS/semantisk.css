@@ -1,8 +1,68 @@
- body {font-family: system-ui, sans-serif; margin: 0; line-height: 1.6; background: #f9fafb; color: #111;}
-    header, footer {background: #1e293b; color: #fff; padding: 1rem;}
-    nav ul {list-style: none; display: flex; gap: 1rem; margin: 0; padding: 0;}
-    nav a {color: #fff; text-decoration: none;}
-    main {padding: 1rem; max-width: 900px; margin: auto;}
-    section {margin-bottom: 2rem;}
-    article {background: #f1f5f9; padding: 1rem; border-radius: 0.5rem;}
-    footer {text-align: center;}
+body {
+    /* Angi system-ui som skriftfont, som er standard på de fleste operativsystemer, for raskere lasting og bedre ytelse. Sans-serif brukes som en reservefont. */
+    font-family: system-ui, sans-serif;
+    /* Fjern standard margin på body-elementet. */
+    margin: 0;
+    /* Angi linjehøyden til 1.6 for bedre lesbarhet. */
+    line-height: 1.6;
+    /* Sett bakgrunnsfargen til en lys gråtone. */
+    background: #f9fafb;
+    /* Angi tekstfargen til en mørk gråtone. */
+    color: #111;
+}
+
+header, footer {
+    /* Angi bakgrunnsfargen til en mørk blåtone. */
+    background: #1e293b;
+    /* Angi tekstfargen til hvit. */
+    color: #fff;
+    /* Legg til 1rem med polstring (padding) rundt header og footer. */
+    padding: 1rem;
+}
+
+nav ul {
+    /* Fjern standard punktmerker fra listen. */
+    list-style: none;
+    /* Bruk flexbox for å arrangere navigasjonselementene horisontalt. */
+    display: flex;
+    /* Legg til 1rem med mellomrom mellom hvert navigasjonselement. */
+    gap: 1rem;
+    /* Fjern standard margin og polstring (padding) på listen. */
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    /* Angi fargen på navigasjonslenkene til hvit. */
+    color: #fff;
+    /* Fjern standard understrekning fra lenkene. */
+    text-decoration: none;
+}
+
+main {
+    /* Legg til 1rem med polstring (padding) rundt hovedinnholdet. */
+    padding: 1rem;
+    /* Angi maksimal bredde for hovedinnholdet for å hindre at det blir for bredt på store skjermer. */
+    max-width: 900px;
+    /* Sentrer hovedinnholdet horisontalt. */
+    margin: auto;
+}
+
+section {
+    /* Legg til 2rem med bunn-margin under hvert section-element. */
+    margin-bottom: 2rem;
+}
+
+article {
+    /* Angi bakgrunnsfargen til en lys gråtone. */
+    background: #f1f5f9;
+    /* Legg til 1rem med polstring (padding) inni artikkelen. */
+    padding: 1rem;
+    /* Legg til avrundede hjørner på artikkelen. */
+    border-radius: 0.5rem;
+}
+
+footer {
+    /* Sentrer teksten i footeren. */
+    text-align: center;
+}
