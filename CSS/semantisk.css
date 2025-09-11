@@ -19,6 +19,7 @@ header, footer {
     /* Legg til 1rem med polstring (padding) rundt header og footer. */
     padding: 1rem;
 }
+/* #innhold { background-color: #1e293b;} */
 
 nav ul {
     /* Fjern standard punktmerker fra listen. */
