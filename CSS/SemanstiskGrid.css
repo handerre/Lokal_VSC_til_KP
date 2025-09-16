@@ -9,8 +9,8 @@ body {
     margin: 0;                       /* Fjerner standard marg på alle sider av dokumentet */
     line-height: 1.6;                /* Gir litt ekstra avstand mellom linjene for bedre lesbarhet */
     background-color: #f4f4f4;       /* Setter en lys grå bakgrunnsfarge */
-    color: #333;    
-    font-size: 14px;                 /* Setter en mørk grå tekstfarge */
+    color: #333;                    /* Setter en mørk grå tekstfarge */
+    font-size: 14px;                 /* Setter skriftstørrelse til 14 px */
 }
 
 /* Definerer containeren som skal bruke grid-layout */
