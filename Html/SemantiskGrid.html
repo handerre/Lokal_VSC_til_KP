@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid-eksempel</title>
+    <link rel="stylesheet" href="../CSS/SemanstiskGrid.css">
+</head>
+<body>
+    <header>
+        <h1>Min flotte nettside</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Hjem</a></li>
+                <li><a href="#">Om oss</a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="grid-container">
+        <article class="hovedinnhold">
+            <h2>Hvorfor bruke grids?</h2>
+            
+                <br>
+                
+                <p>
+                    Bruk av CSS Grid gir en rekke fordeler for webutviklere, spesielt når det gjelder å lage robuste og fleksible layouter. Her er de viktigste:
+
+<ol><li>To-dimensjonal kontroll
+Grid er designet for å håndtere layouter i to dimensjoner, altså både rader og kolonner samtidig. Tradisjonelle metoder som Flexbox er primært én-dimensjonale, og kan enten justere elementer på en rad eller i en kolonne. Med Grid kan du enkelt definere komplekse strukturer som et sjakkbrett eller et magasinlayout, noe som gjør det kraftig for hele side-layouter.
+</li>
+<li>Enklere å lage responsive design
+Grid forenkler prosessen med å lage design som tilpasser seg ulike skjermstørrelser. Med `fr` (fractional units) kan du enkelt fordele plassen dynamisk, og ved hjelp av media queries kan du endre layoutet helt ved å redefinere `grid-template-columns` eller `grid-template-rows`. Dette betyr at du kan ha et to-kolonners layout på en datamaskin, men enkelt endre det til én enkelt kolonne på en mobiltelefon med minimal kode.
+</li>
+
+<li>Uavhengighet av innholdsrekkefølge
+En stor fordel er at du kan plassere grid-elementer i nøyaktig den ruten du ønsker, uavhengig av rekkefølgen de står i HTML-koden. Dette gir deg full kontroll over presentasjonen uten å måtte endre den semantiske strukturen i HTML. For eksempel kan et bilde som kommer etter en tekst i HTML-koden, vises før teksten i layoutet ved bruk av `grid-column` og `grid-row` egenskapene. Dette er spesielt nyttig for tilgjengelighet, da rekkefølgen i HTML fortsatt kan være logisk for skjermlesere.
+</li>
+
+<li>Enklere og renere kode
+Før Grid måtte utviklere ofte bruke float-egenskaper eller Flexbox-hacks for å oppnå kompliserte layouter, noe som ofte førte til rotete og vanskelig vedlikeholdbar kode. Med Grid blir koden mye renere og mer lesbar. Hele layoutet defineres i forelderelementet, noe som holder barna fri fra layout-spesifikk stil. Dette reduserer behovet for ekstra wrapper-div'er og unødvendige CSS-regler.
+</li>
+<li>Perfekt for "macrolayouter"
+Mens Flexbox er utmerket for "microlayouter" (justering av elementer i en komponent, for eksempel et navigasjonsfelt), er Grid optimalt for macrolayouter" (hele sidens layout). Kombinasjonen av de to er ekstremt kraftfull: Grid kan lage den overordnede strukturen for siden (header, main, sidepanel, footer), mens Flexbox kan brukes for å justere innholdet inne i de enkelte grid-cellene.
+             </li> </ol>  </p>
+        </article>
+
+        <aside class="sidepanel">
+            <h3>Relatert informasjon</h3>
+            <p>Dette sidepanelet kan inneholde lenker, reklame eller annen tilleggsinformasjon.</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Min nettside</p>
+    </footer>
+</body>
+</html>

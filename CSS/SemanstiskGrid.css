@@ -1,0 +1,62 @@
+
+
+
+/* fil: stil.css */
+
+/* Styler hele body-elementet for grunnleggende utseende og fonter */
+body {
+    font-family: sans-serif;          /* Setter en standard skrifttype */
+    margin: 0;                       /* Fjerner standard marg på alle sider av dokumentet */
+    line-height: 1.6;                /* Gir litt ekstra avstand mellom linjene for bedre lesbarhet */
+    background-color: #f4f4f4;       /* Setter en lys grå bakgrunnsfarge */
+    color: #333;    
+    font-size: 14px;                 /* Setter en mørk grå tekstfarge */
+}
+
+/* Definerer containeren som skal bruke grid-layout */
+.grid-container {
+    display: grid;                   /* Dette er kjerneegenskapen: den gjør elementet til en grid-beholder */
+    /* Definerer kolonnene i grid'en.
+       '3fr' betyr at den første kolonnen tar 3 "brøkdeler" av plassen.
+       '1fr' betyr at den andre kolonnen tar 1 "brøkdel" av plassen.
+       Totalt er det 4 brøkdeler (3+1), så kolonnene blir 75% og 25% brede. */
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;                       /* Legger til 20px mellomrom mellom grid-elementene (horisontalt og vertikalt) */
+    padding: 20px;                   /* Legger til 20px innvendig polstring rundt innholdet */
+    max-width: 1100px;               /* Sørger for at containeren ikke blir for bred på store skjermer */
+    margin: 20px auto;               /* Sentrerer containeren horisontalt på siden */
+    background-color: #fff;          /* Setter en hvit bakgrunnsfarge for innholdet */
+    border-radius: 8px;              /* Avrunder hjørnene på containeren */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Legger til en myk skygge for visuell dybde */
+}
+
+/* Stiler for hovedinnhold og sidepanel, som er "items" i grid'en */
+.hovedinnhold, .sidepanel {
+    background-color: #f9f9f9;       /* Setter en lys bakgrunnsfarge for innholdselementene */
+    padding: 20px;                   /* Legger til polstring inne i hvert element */
+    border-radius: 6px;              /* Avrunder hjørnene på innholdselementene */
+}
+
+/* Generelle stiler for header og footer */
+header, footer {
+    text-align: center;              /* Sentrerer teksten i både header og footer */
+    padding: 10px;                   /* Legger til litt polstring */
+    background-color: #333;          /* Setter en mørk bakgrunn */
+    color: white;                    /* Sørger for at teksten er hvit */
+}
+
+/* Styler navigasjonsmenyen */
+nav ul {
+    list-style: none;                /* Fjerner standard punkter fra listen */
+    padding: 0;                      /* Fjerner standard polstring fra listen */
+    display: flex;                   /* Bruker Flexbox for å plassere listeelementene på en rad */
+    justify-content: center;         /* Sentrerer listeelementene horisontalt */
+    gap: 20px;                       /* Legger til 20px mellomrom mellom hvert listeelement */
+}
+
+/* Styler lenkene i navigasjonsmenyen */
+nav a {
+    color: white;                    /* Setter lenkefargen til hvit */
+    text-decoration: none;           /* Fjerner understreken fra lenkene */
+}
+```
