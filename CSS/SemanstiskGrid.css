@@ -67,13 +67,15 @@ body {
     background-color: #fff;          /* Setter en hvit bakgrunnsfarge for innholdet */
     border-radius: 8px;              /* Avrunder hjørnene på containeren */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Legger til en myk skygge for visuell dybde */
+    border-style: dashed;
 }
 
 /* Stiler for hovedinnhold og sidepanel, som er "items" i grid'en */
 .hovedinnhold, .sidepanel {
     background-color: #f9f9f9;       /* Setter en lys bakgrunnsfarge for innholdselementene */
     padding: 20px;                   /* Legger til polstring inne i hvert element */
-    border-radius: 6px;              /* Avrunder hjørnene på innholdselementene */
+    border-radius: 6px;  
+    border-style: dotted;            /* Avrunder hjørnene på innholdselementene */
 }
 
 /* Generelle stiler for header og footer */
@@ -83,6 +85,7 @@ header, footer {
     background-color: #333;          /* Setter en mørk bakgrunn */
     color: white;                    /* Sørger for at teksten er hvit */
 }
+
 
 /* Styler navigasjonsmenyen */
 nav ul {

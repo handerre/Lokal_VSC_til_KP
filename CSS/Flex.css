@@ -1,0 +1,30 @@
+body {
+  font-family: sans-serif; /* Setter en lesbar skrifttype for hele siden */
+  display: flex; /* Gjør body-elementet til en flex-beholder for å sentrere innholdet */
+  justify-content: center; /* Sentrerer alt innholdet horisontalt i body-beholderen */
+  align-items: center; /* Sentrerer alt innholdet vertikalt i body-beholderen */
+  min-height: 100vh; /* Sikrer at body-elementet dekker hele høyden av visningsvinduet */
+  margin: 0; /* Fjerner standard marg på siden */
+  background-color: #f0f0f0; /* Setter en lys grå bakgrunnsfarge */
+}
+
+.flex-container {
+  display: flex; /* Aktiverer flexboks-layout for denne beholderen. Dette er nøkkelen! */
+  justify-content: center; /* Fordeler elementene horisontalt. "center" plasserer dem i midten. */
+  gap: 10px; /* Legger til et mellomrom på 10px mellom hvert flex-item */
+  border: 2px solid #333; /* Legger til en solid svart ramme rundt beholderen */
+  padding: 20px; /* Lager avstand mellom innhold og ramme */
+  background-color: #fff; /* Setter hvit bakgrunnsfarge inni beholderen */
+  border-radius: 8px; /* Gir rammen avrundede hjørner */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Legger til en lett skygge for en 3D-effekt */
+}
+
+.flex-item {
+  background-color: #007bff; /* Setter en blå bakgrunnsfarge for boksene */
+  color: white; /* Setter teksten til hvit */
+  padding: 40px; /* Lager avstand inni hver boks */
+  text-align: center; /* Sentrerer teksten inni hver boks */
+  border-radius: 5px; /* Gir boksene avrundede hjørner */
+  flex: 1; /* Gir boksene lik bredde og gjør dem fleksible til å fylle beholderen */
+  max-width: 200px; /* Setter en maksimal bredde på 200px per boks for å unngå at de blir for store */
+}
