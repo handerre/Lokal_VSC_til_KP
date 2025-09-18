@@ -12,7 +12,46 @@ body {
     color: #333;                    /* Setter en mørk grå tekstfarge */
     font-size: 14px;                 /* Setter skriftstørrelse til 14 px */
 }
+/* Standard stilregler for alle skjermer */
+body {
+  font-family: Arial, sans-serif; /* Setter skrifttypen til Arial eller en standard sans-serif-font hvis Arial ikke er tilgjengelig. */
+  background-color: #fff; /* Setter bakgrunnsfargen på hele siden til hvit. */
+}
 
+/* --- */
+
+/* Regler som bare gjelder for skjermer med en bredde på 600 piksler eller mindre */
+@media screen and (max-width: 600px) {
+  /* @media: Dette er selve media query-regelen som starter et betinget stilblokk. */
+  /* screen: Spesifiserer at disse reglene kun skal gjelde for skjermer (ikke for utskrift, for eksempel). */
+  /* and: Kobler sammen media-typen og media-egenskapen. */
+  /* (max-width: 600px): Dette er media-egenskapen som betyr at stilene inni parentesene bare aktiveres når bredden på visningsområdet (viewport) er 600 piksler eller mindre. */
+  body {
+    background-color: #f0f0f0; /* Endrer bakgrunnsfargen til lys grå kun på små skjermer. */
+  }
+  .container {
+    width: 95%; /* Gir en "container"-div en bredde på 95% av skjermen, med litt luft på sidene. */
+  }
+  h1 {
+    font-size: 1.5em; /* Reduserer fontstørrelsen for h1-overskriften for bedre lesbarhet på små skjermer. */
+  }
+}
+
+/* --- */
+
+/* Regler som bare gjelder for skjermer med en bredde på 1200 piksler eller mer */
+@media screen and (min-width: 1200px) {
+  /* @media screen and (min-width: 1200px): Denne regelen aktiveres når visningsområdet er 1200 piksler eller bredere. */
+  body {
+    background-color: #e0e0e0; /* Endrer bakgrunnsfargen til en litt mørkere grå kun på store skjermer. */
+  }
+  .container {
+    width: 1100px; /* Setter en fast bredde på 1100 piksler for "container"-diven for å unngå at innholdet strekkes for langt. */
+  }
+  h1 {
+    font-size: 3em; /* Øker fontstørrelsen for h1-overskriften for å fylle ut mer av plassen på store skjermer. */
+  }
+}
 /* Definerer containeren som skal bruke grid-layout */
 .grid-container {
     display: grid;                   /* Dette er kjerneegenskapen: den gjør elementet til en grid-beholder */

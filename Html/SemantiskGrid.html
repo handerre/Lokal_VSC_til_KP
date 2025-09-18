@@ -21,45 +21,41 @@
     <main class="grid-container">
         <article class="hovedinnhold">
             <h2>Hvorfor bruke grids?</h2>
-                <p>
-                    Bruk av CSS Grid gir en rekke fordeler for webutviklere, spesielt når det gjelder å lage robuste og fleksible layouter. Her er de viktigste:
-                <ol><li>To-dimensjonal kontroll
-                    Grid er designet for å håndtere layouter i to dimensjoner, altså både rader og kolonner samtidig. Tradisjonelle metoder som Flexbox er primært én-dimensjonale, og kan enten justere elementer på en rad eller i en kolonne. Med Grid kan du enkelt definere komplekse strukturer som et sjakkbrett eller et magasinlayout, noe som gjør det kraftig for hele side-layouter.
-                    <br>
-                    <ul>
-                    <li>En forelder (parent-element): Dette er et overordnet HTML-element som fungerer som en beholder.</li>
-                    <li>Dens barn (child-elements): Dette er elementene som ligger inne i forelderen.</li>
-                    </ul>
-                    </li>
-                    <li>Enklere å lage responsive design
-                    Grid forenkler prosessen med å lage design som tilpasser seg ulike skjermstørrelser. Med `fr` (fractional units) kan du enkelt fordele plassen dynamisk, og ved hjelp av media queries kan du endre layoutet helt ved å redefinere `grid-template-columns` eller `grid-template-rows`. Dette betyr at du kan ha et to-kolonners layout på en datamaskin, men enkelt endre det til én enkelt kolonne på en mobiltelefon med minimal kode.
-                    </li>
-
-                    <li>Uavhengighet av innholdsrekkefølge
-                    En stor fordel er at du kan plassere grid-elementer i nøyaktig den ruten du ønsker, uavhengig av rekkefølgen de står i HTML-koden. Dette gir deg full kontroll over presentasjonen uten å måtte endre den semantiske strukturen i HTML. For eksempel kan et bilde som kommer etter en tekst i HTML-koden, vises før teksten i layoutet ved bruk av `grid-column` og `grid-row` egenskapene. Dette er spesielt nyttig for tilgjengelighet, da rekkefølgen i HTML fortsatt kan være logisk for skjermlesere.
-                    </li>
-
-                    <li>Enklere og renere kode
-                    Før Grid måtte utviklere ofte bruke float-egenskaper eller Flexbox-hacks for å oppnå kompliserte layouter, noe som ofte førte til rotete og vanskelig vedlikeholdbar kode. Med Grid blir koden mye renere og mer lesbar. Hele layoutet defineres i forelderelementet, noe som holder barna fri fra layout-spesifikk stil. Dette reduserer behovet for ekstra wrapper-div'er og unødvendige CSS-regler.
-                    </li>
-                    <li>Perfekt for "macrolayouter"
-                    Mens Flexbox er utmerket for "microlayouter" (justering av elementer i en komponent, for eksempel et navigasjonsfelt), er Grid optimalt for macrolayouter" (hele sidens layout). Kombinasjonen av de to er ekstremt kraftfull: Grid kan lage den overordnede strukturen for siden (header, main, sidepanel, footer), mens Flexbox kan brukes for å justere innholdet inne i de enkelte grid-cellene.
-                            </li> 
-                        </ol>  
-                    </p>
+            <p>Bruk av CSS Grid gir en rekke fordeler for webutviklere, spesielt når det gjelder å lage robuste og fleksible layouter. Her er de viktigste:</p>
+            <ol>
+                <li>
+                    <b>To-dimensjonal kontroll</b>
+                    <p>Grid er designet for å håndtere layouter i to dimensjoner, altså både rader og kolonner samtidig. Tradisjonelle metoder som Flexbox er primært én-dimensjonale, og kan enten justere elementer på en rad eller i en kolonne. Med Grid kan du enkelt definere komplekse strukturer som et sjakkbrett eller et magasinlayout, noe som gjør det kraftig for hele side-layouter.</p>
+                </li>
+                <li>
+                    <b>Enklere å lage responsive design</b>
+                    <p>Grid forenkler prosessen med å lage design som tilpasser seg ulike skjermstørrelser. Med `fr` (fractional units) kan du enkelt fordele plassen dynamisk, og ved hjelp av media queries kan du endre layoutet helt ved å redefinere `grid-template-columns` eller `grid-template-rows`. Dette betyr at du kan ha et to-kolonners layout på en datamaskin, men enkelt endre det til én enkelt kolonne på en mobiltelefon med minimal kode.</p>
+                </li>
+                <li>
+                    <b>Uavhengighet av innholdsrekkefølge</b>
+                    <p>En stor fordel er at du kan plassere grid-elementer i nøyaktig den ruten du ønsker, uavhengig av rekkefølgen de står i HTML-koden. Dette gir deg full kontroll over presentasjonen uten å måtte endre den semantiske strukturen i HTML. For eksempel kan et bilde som kommer etter en tekst i HTML-koden, vises før teksten i layoutet ved bruk av `grid-column` og `grid-row` egenskapene. Dette er spesielt nyttig for tilgjengelighet, da rekkefølgen i HTML fortsatt kan være logisk for skjermlesere.</p>
+                </li>
+                <li>
+                    <b>Enklere og renere kode</b>
+                    <p>Før Grid måtte utviklere ofte bruke float-egenskaper eller Flexbox-hacks for å oppnå kompliserte layouter, noe som ofte førte til rotete og vanskelig vedlikeholdbar kode. Med Grid blir koden mye renere og mer lesbar. Hele layoutet defineres i forelderelementet, noe som holder barna fri fra layout-spesifikk stil. Dette reduserer behovet for ekstra wrapper-div'er og unødvendige CSS-regler.</p>
+                </li>
+                <li>
+                    <b>Perfekt for "macrolayouter"</b>
+                    <p>Mens Flexbox er utmerket for "microlayouter" (justering av elementer i en komponent, for eksempel et navigasjonsfelt), er Grid optimalt for "macrolayouter" (hele sidens layout). Kombinasjonen av de to er ekstremt kraftfull: Grid kan lage den overordnede strukturen for siden (header, main, sidepanel, footer), mens Flexbox kan brukes for å justere innholdet inne i de enkelte grid-cellene.</p>
+                </li>
+            </ol>
+            <ul>
+                <li>En forelder (parent-element): Dette er et overordnet HTML-element som fungerer som en beholder.</li>
+                <li>Dens barn (child-elements): Dette er elementene som ligger inne i forelderen.</li>
+            </ul>
         </article>
 
         <aside class="sidepanel">
-            <h3>ID: Den unike merkelappen 🏷️</h3>
-            <p>
-                En ID er som et personnummer. Hvert element kan kun ha én ID, og ingen andre elementer på samme side kan ha den samme ID-en. 
-                Den brukes når du vil peke ut ett helt spesifikt element og gi det en unik stil eller funksjon. ID skrives slik i css; #"navn" + verdier feks. .ku {color: white;}</p>
+            <h3>ID: Den unike merkelapp🏷️</h3>
+            <p>En ID er som et personnummer. Hvert element kan kun ha én ID, og ingen andre elementer på samme side kan ha den samme ID-en. Den brukes når du vil peke ut ett helt spesifikt element og gi det en unik stil eller funksjon. ID skrives slik i CSS: `#navn { color: blue; }`.</p>
 
-                <h3>Class: Kategori-merkelappen 🔖</h3>
-                            <p>
-                En class er som en yrkestittel. Flere personer kan ha samme yrkestittel, og en person kan ha flere titler. Du kan gi flere elementer den samme klassen, og et enkelt element kan ha flere klasser. Den brukes når du vil gi stil til en gruppe av elementer som deler en felles egenskap.En ID er som et personnummer. Hvert element kan kun ha én ID, og ingen andre elementer på samme side kan ha den samme ID-en. 
-                Class skrives slik i css; ."navn" + verdier feks. #hest {color: white;}
-            </p>
+            <h3>Class: Kategori-merkelapp🔖</h3>
+            <p>En class er som en yrkestittel. Flere personer kan ha samme yrkestittel, og en person kan ha flere titler. Du kan gi flere elementer den samme klassen, og et enkelt element kan ha flere klasser. Den brukes når du vil gi stil til en gruppe av elementer som deler en felles egenskap. Class skrives slik i CSS: `.navn { color: green; }`.</p>
         </aside>
     </main>
 
