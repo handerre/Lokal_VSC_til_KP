@@ -1,27 +1,45 @@
-<!DOCTYPE html>
-<html lang="no">
+<!-- Angir at dette er et HTML-dokument -->
+<html lang="no"> <!-- Setter språk til norsk -->
 <head>
+    <!-- Angir tegnsett (UTF-8 støtter norske bokstaver) -->
     <meta charset="UTF-8">
+
+    <!-- Gjør siden responsiv på ulike enheter -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tittelen vises i nettleserfanen -->
     <title>Grid-eksempel</title>
+
+    <!-- Kobler til ekstern CSS-fil -->
     <link rel="stylesheet" href="../CSS/SemanstiskGrid.css">
 </head>
+
+<!-- Selve innholdet på nettsiden -->
 <body>
+    <!-- Sidehode: ofte brukt til logo og navigasjon -->
     <header>
+        <!-- Hovedoverskrift for siden -->
         <h1>Min nettside med bruk av grids</h1>
+
+        <!-- Navigasjonsmeny -->
         <nav>
+            <!-- Liste med lenker -->
             <ul>
-                <li><a href="#">Hjem</a></li>
-                <li><a href="#">Om oss</a></li>
-                <li><a href="#">Kontakt</a></li>
+                <li><a href="#">Hjem</a></li> <!-- Lenke til forsiden -->
+                <li><a href="#">Om oss</a></li> <!-- Lenke til "Om oss"-seksjon -->
+                <li><a href="#">Kontakt</a></li> <!-- Lenke til "Kontakt"-seksjon -->
             </ul>
         </nav>
     </header>
 
+    <!-- Hovedinnholdet på siden. Bruker CSS Grid-layout -->
     <main class="grid-container">
+        <!-- Artikkel med det sentrale innholdet -->
         <article class="hovedinnhold">
             <h2>Hvorfor bruke grids?</h2>
             <p>Bruk av CSS Grid gir en rekke fordeler for webutviklere, spesielt når det gjelder å lage robuste og fleksible layouter. Her er de viktigste:</p>
+            
+            <!-- Nummerert liste med grunner -->
             <ol>
                 <li>
                     <b>To-dimensjonal kontroll</b>
@@ -44,12 +62,15 @@
                     <p>Mens Flexbox er utmerket for "microlayouter" (justering av elementer i en komponent, for eksempel et navigasjonsfelt), er Grid optimalt for "macrolayouter" (hele sidens layout). Kombinasjonen av de to er ekstremt kraftfull: Grid kan lage den overordnede strukturen for siden (header, main, sidepanel, footer), mens Flexbox kan brukes for å justere innholdet inne i de enkelte grid-cellene.</p>
                 </li>
             </ol>
+
+            <!-- Punktliste som forklarer begreper -->
             <ul>
                 <li>En forelder (parent-element): Dette er et overordnet HTML-element som fungerer som en beholder.</li>
                 <li>Dens barn (child-elements): Dette er elementene som ligger inne i forelderen.</li>
             </ul>
         </article>
 
+        <!-- Sidepanel med tilleggsinformasjon -->
         <aside class="sidepanel">
             <h3>ID: Den unike merkelappen 🏷️</h3>
             <p>En ID er som et personnummer. Hvert element kan kun ha én ID, og ingen andre elementer på samme side kan ha den samme ID-en. Den brukes når du vil peke ut ett helt spesifikt element og gi det en unik stil eller funksjon. ID skrives slik i CSS: `#navn { color: blue; }`.</p>
@@ -59,6 +80,7 @@
         </aside>
     </main>
 
+    <!-- Bunntekst: nederst på siden -->
     <footer>
         <p>&copy; 2025 Min nettside</p>
     </footer>
