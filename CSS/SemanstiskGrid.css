@@ -62,7 +62,7 @@ body {
     grid-template-columns: 3fr 1fr;
     gap: 20px;                       /* Legger til 20px mellomrom mellom grid-elementene (horisontalt og vertikalt) */
     padding: 20px;                   /* Legger til 20px innvendig polstring rundt innholdet */
-    max-width: 1100px;               /* Sørger for at containeren ikke blir for bred på store skjermer */
+    max-width: 2000px;               /* Sørger for at containeren ikke blir for bred på store skjermer */
     margin: 20px auto;               /* Sentrerer containeren horisontalt på siden */
     background-color: #fff;          /* Setter en hvit bakgrunnsfarge for innholdet */
     border-radius: 8px;              /* Avrunder hjørnene på containeren */
