@@ -30,10 +30,3 @@ body {
   border-style: dashed;
 }
 
-/* Generelle stiler for header og footer */
-header {
-    text-align: center;              /* Sentrerer teksten i både header og footer */
-    padding: 10px;                   /* Legger til litt polstring */
-    background-color: #333;          /* Setter en mørk bakgrunn */
-    color: white;                    /* Sørger for at teksten er hvit */
-}
