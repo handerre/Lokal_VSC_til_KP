@@ -1,28 +1,47 @@
-<!DOCTYPE html>
-<html lang="no">
-
-<head>
-    <meta charset="utf-8" />
-    <title>Bent</title>
-    <link rel="stylesheet" href="CSS/stil.css">
+<!DOCTYPE html> <html lang="no"> <head>
+  <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Kombinert Layout-eksempel</title> 
+  <link rel="stylesheet" href="CSS/Grid_flex.css"> 
 </head>
-
 <body>
-    <!-- Her er en del som skal si noe  -->
-    <h1>Nyttige lenker skoleåret KP 25/26</h1>
-    <p>Oversikt over lenker:</p>
-    <p><a href="https://www.w3.org/">W3C</a></p>
+
+  <div class="grid-container">
+
+    <header class="grid-header">
+      <h1>Lenker til mine elementer vist i timene</h1>
+      <p>HTML/CSS, JS, SQL og Database</p>
+    </header>
+    <main class="grid-main">
+      <div class="flex-container">
+        <article class="flex-item">
+          <h2>HTML/CSS</h2>
+    <p><a href="https://www.w3.org/about/">W3C - Standardiserings-organisasjon for Internet</a></p>
+    <p><a href="https://www.w3schools.com">W3schools</a></p>
     <p><a href="Html/semantisk.html">Min underside semantisk</a></p>
     <p><a href="Html/Ikke_semantisk.html">Min underside IKKE semantisk</a></p>
      <p><a href="Html/SemantiskGrid.html">Min underside hvor jeg bruker semantisk HTML kombinert med grids</a></p>
          <p><a href="Html/flexbox.html">Min underside hvor jeg bruker flexboks</a></p>
              <p><a href="Html/Grid_Flex.html">Min underside hvor jeg bruker semantisk HTML kombinert med grids og flexbox</a></p>
 
-    <br>
+        </article>
+        <aside class="flex-item">
+          <h2>JS</h2>
+            
+    
+    
+        </aside>
+     <aside class="flex-item">
+          <h2>SQL og Database</h2>
+    
+        </aside>
+      </div>
+    </main>
 
-    <h2>Integrert YouTube-video</h2>
-    <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY"
-        title="YouTube video player"></iframe>
+    <footer class="grid-footer">
+      <p>&copy; 2025 Kombinert Layout</p>
+    </footer>
+
+  </div>
+
 </body>
-
 </html>
