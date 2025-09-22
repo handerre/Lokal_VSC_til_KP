@@ -27,4 +27,13 @@ body {
   border-radius: 5px; /* Gir boksene avrundede hjørner */
   flex: 1; /* Gir boksene lik bredde og gjør dem fleksible til å fylle beholderen */
   max-width: 200px; /* Setter en maksimal bredde på 200px per boks for å unngå at de blir for store */
+  border-style: dashed;
+}
+
+/* Generelle stiler for header og footer */
+header {
+    text-align: center;              /* Sentrerer teksten i både header og footer */
+    padding: 10px;                   /* Legger til litt polstring */
+    background-color: #333;          /* Setter en mørk bakgrunn */
+    color: white;                    /* Sørger for at teksten er hvit */
 }
