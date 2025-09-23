@@ -23,7 +23,7 @@ body {
 }
 
 .grid-main {
-  background-color: #092229; /* Bakgrunnsfarge for hovedinnhold */
+  background-color: #34495e; /* Bakgrunnsfarge for hovedinnhold */
   padding: 20px; /* Innvendig avstand */
   border-radius: 8px; /* Avrundede hjørner */
 }
