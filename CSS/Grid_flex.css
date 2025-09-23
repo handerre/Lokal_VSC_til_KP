@@ -19,11 +19,13 @@ body {
   color: white; /* Tekstfarge */
   padding: 20px; /* Innvendig avstand */
   text-align: center; /* Sentrerer teksten */
+  border-radius: 8px; /* Avrundede hjørner */
 }
 
 .grid-main {
-  background-color: #ecf0f1; /* Bakgrunnsfarge for hovedinnhold */
+  background-color: #092229; /* Bakgrunnsfarge for hovedinnhold */
   padding: 20px; /* Innvendig avstand */
+  border-radius: 8px; /* Avrundede hjørner */
 }
 
 .grid-footer {
@@ -31,6 +33,7 @@ body {
   color: white; /* Tekstfarge */
   padding: 10px; /* Innvendig avstand */
   text-align: center; /* Sentrerer teksten */
+  border-radius: 8px; /* Avrundede hjørner */
 }
 
 /* 2. FLEXBOKS for å håndtere elementer inni hovedseksjonen */
@@ -49,4 +52,13 @@ body {
   flex: 1; /* Gir elementene lik bredde og gjør dem fleksible */
   max-width: 500px; /* Setter en maksimal bredde per element */
 }
+/* En effekt for universell utforming (UU) */
+a:hover {
+  color: #0e1b29; /* Fargen lenken endrer til når du hovrer */
+  font-size: large; /* Endrer skriftstørrelse */
+}
 
+h2 {
+  text-align: center; /* Setter overskriften midtstilt */
+ 
+}
