@@ -1,56 +1,60 @@
-<!DOCTYPE html> <!-- Angir at dokumentet er et HTML5-dokument -->
-<html lang="no"> <!-- Starter HTML-dokumentet og setter språk til norsk -->
-<head> <!-- Hode-seksjonen som inneholder metadata og eksterne ressurser -->
-    <meta charset="UTF-8"> <!-- Setter tegnsett til UTF-8 (støtter æ, ø, å) -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Gjør at siden er responsiv og tilpasser seg ulike skjermstørrelser -->
-    <title>Bent sin side</title> <!-- Viser tittelen i nettleserfanen -->
-    <link rel="stylesheet" href="CSS/Grid_flex.css"> <!-- Kobler til en ekstern CSS-fil for styling -->
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bent sin side</title>
+    <link rel="stylesheet" href="CSS/Grid_flex.css">
 </head>
-<body> <!-- Kroppen av nettsiden, alt innhold som vises ligger her -->
-    <div class="grid-container"> <!-- Hovedcontainer med grid-layout -->
+<body>
+    <div class="grid-container">
         
-        <header class="grid-header"> <!-- Toppseksjon (header) av siden -->
-            <h1>Lenker til mine elementer vist i timene</h1> <!-- Overskrift for siden -->
-            <p>HTML/CSS, JS, SQL og database</p> <!-- Beskrivende tekst -->
+        <header class="grid-header">
+            <h1>Lenker til mine elementer vist i timene</h1>
+
+            <!-- Meny: legg script etter div for å sikre at elementet finnes før script kjører -->
+            <div id="meny"></div>
+            <script src="JS/meny.js"></script>
         </header>
         
-        <main class="grid-main"> <!-- Hovedinnholdet på siden -->
-            <div class="flex-container"> <!-- Container som bruker flexbox-layout -->
+        <main class="grid-main">
+            <div class="flex-container">
                 
-                <article class="flex-item"> <!-- Seksjon med artikler relatert til HTML/CSS -->
-                    <h2>HTML/CSS</h2> <!-- Undertittel -->
-                    <p><a href="https://www.w3.org/about/" target="_blank" rel="noopener noreferrer">W3C - Standardiseringsorganisasjon for Internett</a></p> <!-- Lenke til W3C -->
-                    <p><a href="https://www.w3schools.com" target="_blank" rel="noopener noreferrer">W3schools</a></p> <!-- Lenke til W3schools -->
-                    <p><a href="Html/semantisk.html" target="_blank" rel="noopener noreferrer">Min underside semantisk</a></p> <!-- Lenke til egen underside med semantisk HTML -->
-                    <p><a href="Html/Ikke_semantisk.html" target="_blank" rel="noopener noreferrer">Min underside IKKE semantisk</a></p> <!-- Lenke til underside uten semantisk HTML -->
-                    <p><a href="Html/SemantiskGrid.html" target="_blank" rel="noopener noreferrer">Min underside hvor jeg bruker semantisk HTML kombinert med grids</a></p> <!-- Lenke til underside med grid -->
-                    <p><a href="Html/flexbox.html" target="_blank" rel="noopener noreferrer">Min underside hvor jeg bruker flexboks</a></p> <!-- Lenke til underside med flexbox -->
-                    <p><a href="Html/Grid_Flex.html" target="_blank" rel="noopener noreferrer">Min underside hvor jeg bruker semantisk HTML kombinert med grids og flexbox</a></p> <!-- Lenke til underside med grid og flexbox -->
-                    <p><a href="Html/UU.html" target="_blank" rel="noopener noreferrer">Universell utforming</a></p> <!-- Lenke til underside om universell utforming -->
+                <article class="flex-item">
+                    <h2>HTML/CSS</h2>
+                    <p><a href="https://www.w3.org/about/" target="_blank" rel="noopener noreferrer">W3C - Standardiseringsorganisasjon for Internett</a></p>
+                    <p><a href="https://www.w3schools.com" target="_blank" rel="noopener noreferrer">W3schools</a></p>
+                    <p><a href="Html/semantisk.html" target="_blank" rel="noopener noreferrer">Min underside semantisk</a></p>
+                    <p><a href="Html/Ikke_semantisk.html" target="_blank" rel="noopener noreferrer">Min underside IKKE semantisk</a></p>
+                    <p><a href="Html/SemantiskGrid.html" target="_blank" rel="noopener noreferrer">Min underside med semantisk HTML kombinert med grids</a></p>
+                    <p><a href="Html/flexbox.html" target="_blank" rel="noopener noreferrer">Min underside med flexboks</a></p>
+                    <p><a href="Html/Grid_Flex.html" target="_blank" rel="noopener noreferrer">Min underside med semantisk HTML kombinert med grids og flexbox</a></p>
+                    <p><a href="Html/UU.html" target="_blank" rel="noopener noreferrer">Universell utforming</a></p>
                 </article>
                 
-                <aside class="flex-item"> <!-- Side-seksjon med JavaScript-ressurser -->
-                    <h2>JavaScript</h2> <!-- Undertittel -->
-                    <p><a href="https://www.w3schools.com" target="_blank" rel="noopener noreferrer">W3schools</a></p> <!-- Lenke til W3schools -->
-                    <p><a href="JS/Klokke.js">Klokke og dato</a></p> <!-- Plassholder-lenke -->
-                    <p><a href="#">Kommer</a></p> <!-- Plassholder-lenke -->
+                <aside class="flex-item">
+                    <h2>JavaScript</h2>
+                    <p><a href="https://www.w3schools.com" target="_blank" rel="noopener noreferrer">W3schools</a></p>
+                    <p><a href="JS/Klokke.js">Klokke og dato</a></p>
+                    
                 </aside>
                 
-                <aside class="flex-item"> <!-- Side-seksjon med SQL og database -->
-                    <h2>SQL og database</h2> <!-- Undertittel -->
-                    <p><a href="https://www.w3schools.com" target="_blank" rel="noopener noreferrer">W3schools</a></p> <!-- Lenke til W3schools -->
-                    <p><a href="https://suno.com/s/tow1h0NETR2GQv9k" target="_blank" rel="noopener noreferrer">ER-modellerings-sang</a></p> <!-- Lenke til en sang om ER-modellering -->
-                    <p><a href="#">Kommer</a></p> <!-- Plassholder-lenke -->
+                <aside class="flex-item">
+                    <h2>SQL og database</h2>
+                    <p><a href="https://www.w3schools.com" target="_blank" rel="noopener noreferrer">W3schools</a></p>
+                    <p><a href="https://suno.com/s/tow1h0NETR2GQv9k" target="_blank" rel="noopener noreferrer">ER-modellerings-sang</a></p>
+                   
                 </aside>
+
             </div>
         </main>
         
-        <footer class="grid-footer"> <!-- Bunntekst på siden -->
-            <p>&copy; 2025 min nettside</p> <!-- Opphavsrett-tekst -->
-                <p id="klokke"></p>
-                <p id="dato"></p>
+        <footer class="grid-footer">
+            <p>&copy; 2025 min nettside</p>
+            <p id="klokke"></p>
+            <p id="dato"></p>
             <script src="JS/Klokke.js"></script>
         </footer>
     </div>
 </body>
-</html> <!-- Avslutter HTML-dokumentet -->
+</html>
