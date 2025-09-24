@@ -21,7 +21,7 @@ body {
 
 .flex-item {
   background-color: #007bff; /* Setter en blå bakgrunnsfarge for boksene */
-  color: white; /* Setter teksten til hvit */
+  color: black; /* Setter teksten til svart */
   padding: 40px; /* Lager avstand inni hver boks */
   text-align: center; /* Sentrerer teksten inni hver boks */
   border-radius: 5px; /* Gir boksene avrundede hjørner */

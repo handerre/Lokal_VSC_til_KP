@@ -1,15 +1,45 @@
-<!DOCTYPE html> <html lang="no"> <head>
-  <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <title>Flexboks-eksempel</title> 
-  <link rel="stylesheet" href="../CSS/Flex.css"> 
-</head>
-<body>
+<!DOCTYPE html> <!-- Forteller nettleseren at dette er et HTML5-dokument -->
+<html lang="no"> <!-- Starter HTML-dokumentet og angir språket til norsk -->
 
-  <div class="flex-container">
-    <div class="flex-item">Boks 1</div>
-    <div class="flex-item">Boks 2</div>
+<head> <!-- Dokumenthode med metadata -->
+  <meta charset="UTF-8"> <!-- Setter tegnsett til UTF-8 (støtter æ, ø og å) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Gjør siden responsiv på mobil -->
+  <title>Flexboks-eksempel</title> <!-- Sidens tittel som vises i fanen -->
+  <link rel="stylesheet" href="../CSS/Flex.css"> <!-- Kobler til ekstern CSS-fil for styling -->
+</head>
+
+<body> <!-- Selve innholdet på nettsiden -->
+
+  <div class="flex-container"> <!-- Hovedcontainer som bruker flexbox -->
+
+    <!-- Første boks med forklaringer og unummerert liste -->
+    <div class="flex-item">
+      <p>flex-container er "foreldre"-elementet som styrer layouten.</p>
+      <p>flex-item-ene (Boks 1, Boks 2, Boks 3) legger seg ved siden av hverandre horisontalt som standard.</p>
+      <p>Om du legger til CSS som f.eks. <code>justify-content: space-between;</code>, vil boksene spres ut med luft mellom seg.</p>
+      <p>Hvis du bruker <code>flex-direction: column;</code>, vil de heller legge seg under hverandre.</p>
+
+      <!-- Unummerert liste -->
+      <ul>
+        <li>Boks 1: Dette er første punkt</li>
+        <li>Boks 1: Dette er andre punkt</li>
+        <li>Boks 1: Dette er tredje punkt</li>
+      </ul>
+    </div> <!-- Avslutter første boks -->
+
+    <!-- Andre boks med en boks inni (nested flex-item) -->
+    <div class="flex-item">
+      Boks 2
+      <div class="flex-item">
+        Boks inne i boks
+      </div>
+    </div> <!-- Avslutter andre boks -->
+
+    <!-- Tredje boks -->
     <div class="flex-item">Boks 3</div>
-  </div>
+
+  </div> <!-- Avslutter flex-container -->
 
 </body>
-</html>
+</html> <!-- Avslutter HTML-dokumentet -->
+
