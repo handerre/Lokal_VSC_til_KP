@@ -1,5 +1,5 @@
 body {
-  font-family: sans-serif; /* Setter en lesbar skrifttype for hele siden */
+  font-family: Arial, Helvetica; /* Setter en lesbar skrifttype for hele siden */
   display: flex; /* Gjør body-elementet til en flex-beholder for å sentrere innholdet */
   justify-content: center; /* Sentrerer alt innholdet horisontalt i body-beholderen */
   align-items: center; /* Sentrerer alt innholdet vertikalt i body-beholderen */
@@ -17,6 +17,7 @@ body {
   background-color: #fff; /* Setter hvit bakgrunnsfarge inni beholderen */
   border-radius: 8px; /* Gir rammen avrundede hjørner */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Legger til en lett skygge for en 3D-effekt */
+ /* flex-direction: column; */ 
 }
 
 .flex-item {
@@ -27,6 +28,6 @@ body {
   border-radius: 5px; /* Gir boksene avrundede hjørner */
   flex: 1; /* Gir boksene lik bredde og gjør dem fleksible til å fylle beholderen */
   max-width: 200px; /* Setter en maksimal bredde på 200px per boks for å unngå at de blir for store */
-  border-style: dashed;
+  border-style: dashed; /* Lager en ramme rundt elementet, slik at det er lettere å se plassering mens en jobber - noe som kan slettes når alt er på riktig plass */
 }
 
