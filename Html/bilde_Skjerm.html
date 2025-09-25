@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<!--
+  bilde_Skjerm.html
+  Denne filen viser et lite responsivt bilde-galleri og en enkel layout.
+  Nedenfor er detaljerte kommentarblokker som forklarer hvilke HTML-tagger
+  og attributter som brukes, og hvorfor de er viktige.
+
+  Kort guide til kommentert innhold (finnes både her og som inline-kommentarer):
+  - Doctype og <html lang="...">: språk og dokumenttype
+  - <head>: metadata som tegnsett og viewport
+  - <style>: inline CSS (kan flyttes til ekstern fil)
+  - Semantiske elementer: <header>, <main>, <article>, <aside>, <footer>
+  - Bilder: <picture>, <source>, <img>, <figure>, <figcaption>
+  - Viktige attributter: lang, charset, viewport, alt, src/srcset, loading
+
+  For testing: åpne filen i en nettleser og endre vindusbredde eller bruk devtools.
+-->
+<html lang="no"> <!-- lang="no" forteller skjermlesere og søkemotorer at innholdet er norsk -->
+<head>
+  <!-- Tegnsett -->
+  <meta charset="UTF-8">
+  <!-- Viktig for responsiv skalering på mobile enheter -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsivt bildeeksempel</title>
+
+  <!--
+    Her er CSS skrevet direkte i head for enkelhet.
+    I et større prosjekt bør CSS ligge i en egen fil (f.eks. CSS/stil.css)
+    og lastes med <link rel="stylesheet">. Inline-stil gjør demoen selvstendig.
+  -->
+  <style>
+    /* ------------------------------------------------------------------ */
+    /* Grunnleggende styling for hele dokumentet (body)                   */
+    /* ------------------------------------------------------------------ */
+    /*
+      font-family: sans-serif; -> enkel, lesbar font
+      margin: 0; -> fjerner default body-margin for å få bedre kontroll
+      background-color: #f4f4f4; -> lys bakgrunn som gir kontrast til kortene
+      color og line-height for god tilgjengelighet og lesbarhet
+    */
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      color: #222;
+      line-height: 1.4;
+    }
+
+    /* ------------------------------------------------------------------ */
+    /* Grid for overordnet side-layout                                    */
+    /* ------------------------------------------------------------------ */
+    /*
+      .grid-container gjør hele siden til et CSS Grid.
+      grid-template-rows: auto 1fr auto -> header, main og footer.
+      min-height: 100vh sørger for at footeren plasseres nederst på skjermen
+      gap gir luft mellom områdene.
+    */
+    .grid-container {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-height: 100vh;
+      gap: 20px;
+      padding: 12px; /* litt luft rundt hele layouten */
+    }
+
+    /* Header-styling */
+    .grid-header {
+      background-color: #2c3e50; /* mørk blå-grå for kontrast */
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px; /* mykere utseende */
+    }
+
+    /* Hovedseksjon */
+    .grid-main {
+      background-color: #ecf0f1; /* lys bakgrunn for innholdsområdet */
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    /* Footer */
+    .grid-footer {
+      background-color: #34495e;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      border-radius: 6px;
+    }
+
+    /* ------------------------------------------------------------------ */
+    /* Flex-container inni main for å ordne kolonner/elementer horisontalt  */
+    /* ------------------------------------------------------------------ */
+    /*
+      Vi bruker flex her slik at innholdselementene (artikkel + asider)
+      kan pakkes, sentreres og tilpasse seg smale skjermer.
+      flex-wrap: wrap tillater at elementer brytes til neste linje.
+    */
+    .flex-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    /* Hver boks i flex-beholderen */
+    .flex-item {
+      background-color: #fff;
+      padding: 18px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+      /*
+        flex: 1 1 260px betyr:
+        - grow = 1 (kan vokse)
+        - shrink = 1 (kan krympe)
+        - basis = 260px (foreslått minnebredde før wrapping)
+      */
+      flex: 1 1 360px; /* fleksibel med min-bredde */
+      max-width: 1100px; /* forhindrer at innhold blir for bredt */
+    }
+
+    /* ------------------------------------------------------------------ */
+    /* Galleri: bruker CSS Grid for å tilpasse antall rader/kolonner         */
+    /* ------------------------------------------------------------------ */
+    /*
+      repeat(auto-fit, minmax(220px, 1fr)) gjør at vi får så mange
+      kolonner som får plass, og hver kolonne får minst 220px.
+      Dette gir et fleksibelt galleri som kollapser til 1 kolonne på små skjermer.
+    */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      align-items: start;
+    }
+
+    /* Bildene: alltid skaleres proporsjonalt */
+    .gallery img {
+      width: 100%; /* ta opp full bredde av col */
+      height: auto; /* behold aspektforhold */
+      display: block; /* fjern ekstra linjehøyde under img */
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    /* Tekst under bilder */
+    .caption {
+      font-size: 0.95rem;
+      color: #333;
+      margin-top: 8px;
+    }
+
+    /* ------------------------------------------------------------------ */
+    /* Media query for større skjermer: endre grid til tre-kolonne layout    */
+    /* ------------------------------------------------------------------ */
+    /*
+      Når skjermen er bred nok, plasserer vi hovedinnholdet i midtkolonnen
+      og lar margen-områdene være på sidene (1fr 2fr 1fr).
+      Dette er en enkel teknikk for «content centered layout».
+    */
+    @media (min-width: 1000px) {
+      .grid-container {
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: auto 1fr auto;
+      }
+
+      /* Header og footer skal strekke seg over hele bredden */
+      .grid-header {
+        grid-column: 1 / -1; /* header over hele bredden */
+      }
+
+      .grid-main {
+        grid-column: 2 / 3; /* hovedinnhold i midten */
+      }
+
+      .grid-footer {
+        grid-column: 1 / -1;
+      }
+
+      /* Litt større maksimal bredde for innholdselementene på store skjermer */
+      .flex-item {
+        max-width: 900px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Hovedgrid for siden -->
+  <!--
+    <div> er en generisk beholder uten semantisk betydning.
+    Her brukes den sammen med klassen "grid-container" for å aktivere CSS Grid
+    og forme det overordnede side-layoutet (header, main, footer).
+  -->
+  <div class="grid-container">
+
+    <!--
+      Header:
+      - <header> er et semantisk element som inneholder introduksjon eller navigasjon
+      - Bruk én <h1> per side for riktig struktur (h1 er toppnivåoverskrift)
+    -->
+    <header class="grid-header">
+      <h1>Bilder — responsiv visning</h1>
+      <p>Eksempel som viser hvordan bilder og layout tilpasser seg små og store skjermer.</p>
+    </header>
+
+    <!-- Hovedinnhold -->
+    <!--
+      <main> forteller skjermlesere og søkemotorer hva som er hovedinnholdet.
+      Det bør bare være ett <main> per side.
+    -->
+    <main class="grid-main">
+      <div class="flex-container">
+
+        <!-- Artikkel med bilde-galleri -->
+        <!--
+          <article> representerer en selvstendig innholdsenhet.
+          Bruk det når innholdet kan distribueres eller gjenbrukes separat.
+        -->
+        <article class="flex-item">
+          <h2>Galleri</h2>
+          <!--
+            Merk: relative stier til bildefiler må være korrekt i forhold til hvor
+            denne HTML-filen ligger. I dette prosjektet ligger mappen "Bilder/"
+            i rotmappen, og siden denne filen ligger i mappen "Html/",
+            må vi bruke "../Bilder/Filnavn.png" for å gå én mappe opp.
+          -->
+          <p>To bilder fra mappen <code>Bilder/</code>. Endre nettleservinduets bredde for å se hvordan de skalerer.</p>
+
+          <!-- Galleri-nett: fleksibel kolonnefordeling via CSS Grid -->
+          <div class="gallery">
+            <!--
+              Bilder og responsivitet:
+              - <picture>: pakker flere <source>-kilder og en fallback <img>
+              - <source media="..." srcset="...">: hvis mediespørringen matcher, bruker nettleseren denne kilden
+              - <img>: fallback og det bildet som faktisk vises; bruk alltid alt-tekst
+            -->
+            <figure>
+              <!-- figure grupperer bildet og en valgfri bildetekst (figcaption) -->
+              <picture>
+                <!--
+                  Eksempel på hvordan du senere kan angi ulike filer for ulike skjermer:
+                  <source media="(min-width: 1200px)" srcset="Bilder/Semantisk_bilde-large.png">
+                -->
+                <source media="(min-width: 1000px)" srcset="../Bilder/Semantisk_bilde.png">
+                <!--
+                  <img> er alltid nødvendig som fallback.
+                  - src: sti til bildet
+                  - alt: beskrivende tekst for skjermlesere og for tilfelle bildet ikke lastes
+                  - loading="lazy": utsetter nedlasting til bildet nærmer seg viewport
+                -->
+                <img src="../Bilder/Semantisk_bilde.png" alt="Semantisk eksempel" loading="lazy">
+              </picture>
+              <figcaption class="caption">Semantisk eksempel (skalerer responsivt)</figcaption>
+            </figure>
+
+            <figure>
+              <picture>
+                <!-- En annen bildekilde/variant for større skjermer -->
+                <source media="(min-width: 1000px)" srcset="../Bilder/Timeplan.png">
+                <img src="../Bilder/Timeplan.png" alt="Timeplan" loading="lazy">
+              </picture>
+              <figcaption class="caption">Timeplan (skalerer responsivt)</figcaption>
+            </figure>
+          </div>
+
+        </article>
+
+        <!-- Et kort info-område; viser noen tips om bildene -->
+        <aside class="flex-item">
+          <h2>Hurtiginfo</h2>
+          <ul>
+            <li>Bildene har <code>width:100%</code> og <code>height:auto</code> for riktig skalering.</li>
+            <li>Layout bruker en kombinasjon av Grid og Flex for å reagere på skjermstørrelse.</li>
+            <li>Bildene ligger i mappen <code>Bilder/</code> og refereres relatert til denne filens plassering.</li>
+            <li>Legg til alternative bildestørrelser (srcset) for bedre ytelse på mobile enheter.</li>
+          </ul>
+        </aside>
+
+        <!-- Lenke/veiledning -->
+        <aside class="flex-item">
+          <h2>Lenker</h2>
+          <p><a href="index.html">Gå til hovedsiden</a></p>
+          <p>Åpne denne filen i en nettleser for å teste: trykk på filen eller bruk <code>Åpne med &gt; Nettleser</code>.</p>
+        </aside>
+
+      </div>
+    </main>
+
+    <!-- Footer: kort opphavsnote -->
+    <!--
+      <footer> er semantisk riktig for bunntekst på siden. Innhold her kan være
+      copyright, kontaktinfo eller sekundære lenker.
+    -->
+    <footer class="grid-footer">
+      <p>&copy; 2025 Responsivt bildeeksempel</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
