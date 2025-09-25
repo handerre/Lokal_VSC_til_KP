@@ -2,68 +2,123 @@
 <html lang="no">
 <head>
   <meta charset="utf-8">
+  <!--
+    viewport: viktig for responsiv design. width=device-width sørger for at
+    layouten bruker enheten sin faktiske bredde, og initial-scale=1.0 setter
+    start-zoom til 100%.
+  -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enkelt responsivt bilde</title>
   <style>
-    /* Enkel container for bildet */
+    /* ------------------------------------------------------------------ */
+    /* Generelle notater:                                                   */
+    /* - .image-wrap er en container som bestemmer hvor bredt bildet kan bli. */
+    /* - Bildet selv har width:100% og height:auto for å bevare proporsjonene.*/
+    /* - Bruk media queries for å gi forskjellige maksverdier på ulike skjermer.*/
+    /* ------------------------------------------------------------------ */
+
+    /* Enkel container for bildet: styrer maksimal bredde og sentrering */
     .image-wrap {
-      display: block;
-      width: 100%;            /* ta opp full bredde av foreldreelementet */
-      max-width: 900px;       /* aldri større enn dette på store skjermer */
-      margin: 24px auto;      /* sentrerer containeren */
-      padding: 0 12px;        /* litt luft på mobil */
+      display: block;         /* container oppfører seg som blokk */
+      width: 100%;            /* ta opp all tilgjengelig bredde i foreldrekontekst */
+      max-width: 900px;       /* standard maksimal bredde (kan justeres) */
+      margin: 24px auto;      /* sentrerer containeren horisontalt */
+      padding: 0 12px;        /* litt luft på sidene, spesielt på mobil */
+      /* Endre max-width her for å påvirke hvor stort bildet kan bli */
     }
 
-    /* Selve bildet: skalerer proporsjonalt */
+    /* Selve bildet: alltid proporsjonalt (ingen forvrenging) */
     .image-wrap img {
-      display: block;         /* fjern inline-gap */
-      width: 100%;            /* fyll containerens bredde */
-      height: auto;           /* behold aspektforhold */
-      max-height: none;       /* kan begrenses hvis ønskelig */
-      border-radius: 6px;
+      display: block;         /* fjerner mulige inline-gap under bildet */
+      width: 100%;            /* bildet fyller containerens bredde */
+      height: auto;           /* behold aspektforholdet (bredde:høyde) */
+      max-height: none;       /* om ønskelig kan du sette en max-height */
+      border-radius: 6px;     /* estetisk avrunding */
       box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+      /* Bruk object-fit hvis du setter max-height og ønsker kontroll over beskjæring */
     }
 
-    /* Mobil: begrens hvor bred bildet blir (brukes før media-query) */
+    /* ------------------------------------------------------------------ */
+    /* Mobiltilpasning: her setter vi en lavere max-width for små skjermer    */
+    /* ------------------------------------------------------------------ */
     @media (max-width: 599px) {
       .image-wrap {
-        max-width: 420px;     /* eks. mobil: litt smalere container */
+        /* På mobile enheter kan du redusere max-width for å gi mer luft rundt */
+        max-width: 420px;     /* eksempelverdi for mobil */
       }
     }
 
-    /* Store skjermer: gjør bildet større ved å øke containerens max-width */
+    /* ------------------------------------------------------------------ */
+    /* Store skjermer: gi større maksimumsverdi og eventuelt begrens høyde */
+    /* ------------------------------------------------------------------ */
     @media (min-width: 1000px) {
       .image-wrap {
-        max-width: 1200px;    /* større visning på stasjonære */
+        max-width: 1200px;    /* gir større visning på stasjonære */
       }
       .image-wrap img {
-        max-height: 700px;    /* valgfritt: begrens høyde slik at ikke for høyt */
-        object-fit: cover;    /* kan beskjære for å fylle området */
+        /* Hvis du setter max-height, kan bildet bli beskåret med object-fit */
+        max-height: 700px;    /* valgfritt: begrenser høyden */
+        object-fit: cover;    /* fyller området og beskjærer om nødvendig */
       }
     }
 
-    /* Enkel typografi */
-    body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial; color: #111; background: #f7f8fa; }
+    /* Enkel typografi for siden */
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+      color: #111;
+      background: #f7f8fa;
+      margin: 0;
+    }
     main { padding: 24px; }
     h1 { text-align: center; margin-top: 12px; }
     p.caption { text-align: center; color: #444; font-size: 0.95rem; }
+
+    /* ------------------------------------------------------------------ */
+    /* Tips for videre forbedring:                                         */
+    /* - Bruk srcset og sizes for å levere passende oppløsning til hver enhet. */
+    /* - For tilgjengelighet: alltid gi meningsfull alt-tekst på <img>.       */
+    /* - Hvis du ikke vil at bildet skal beskjæres, fjern object-fit eller bruk   */
+    /*   object-fit: contain i stedet for cover.                               */
+    /* ------------------------------------------------------------------ */
   </style>
 </head>
 <body>
   <main>
     <h1>Enkelt responsivt bilde</h1>
-    <!-- Bytt bildet nedenfor etter behov; filen i repoet ligger i ../Bilder/ -->
-    <div class="image-wrap">
-      <img src="../Bilder/Semantisk_bilde.png" alt="Eksempelbilde" loading="lazy">
-    </div>
-    <p class="caption">Bildet skalerer automatisk: bredde = 100% av containeren. Endre <code>max-width</code> i CSS for å justere størrelsene.</p>
+    <!--
+      Bildesti: filene i dette repositoriet ligger i roten i mappen 'Bilder/'.
+      Fordi denne HTML-filen ligger i mappen 'Html/', må vi gå én mappe opp
+      med '../' for å referere til bildet: '../Bilder/Filnavn.png'
 
-    <!-- Kort forklaring for redigering:
-         - For å gjøre bildet større på store skjermer, øk verdien i
-           @media (min-width: 1000px) .image-wrap { max-width: ... }
-         - For å gjøre bildet bredere på mobil, juster .image-wrap { max-width: ... }
-         - For å begrense billedhøyde, bruk .image-wrap img { max-height: ... } og object-fit
+      Accessibility (tilgjengelighet):
+      - Bruk alltid en beskrivende alt-tekst som forklarer bildet for skjermlesere.
+      - Bruk loading="lazy" for å spare båndbredde ved siden lasting.
     -->
+    <div class="image-wrap">
+      <!--
+        IMG-attributter:
+        - src: sti til bildet (fallback)
+        - alt: beskrivelse for skjermlesere / når bildet ikke kan lastes
+        - loading="lazy": utsetter nedlasting til nær viewport
+        - Bruk gjerne srcset og sizes for responsive bildevalg (se kommentar nedenfor)
+      -->
+      <img src="../Bilder/Semantisk_bilde.png" alt="Eksempel på semantisk bilde" loading="lazy">
+    </div>
+    <p class="caption">Bildet skalerer automatisk med skjermstørrelsen. Endre <code>max-width</code> i CSS for å justere hvor stort det kan bli.</p>
+
+    <!--
+      Eksempel på bruk av srcset/sizes (valgfritt, forbedrer ytelse):
+      <img
+        src="../Bilder/Semantisk_bilde.png"
+        srcset="../Bilder/Semantisk_bilde-small.png 480w, ../Bilder/Semantisk_bilde-medium.png 800w, ../Bilder/Semantisk_bilde-large.png 1200w"
+        sizes="(max-width: 599px) 420px, (min-width: 1000px) 900px, 100vw"
+        alt="Eksempel på semantisk bilde">
+
+      - srcset: lister tilgjengelige bildestørrelser og deres pixelbredde
+      - sizes: forteller nettleseren hvilken billedbredde som mest sannsynlig vil brukes
+      Nettleseren velger den mest passende filen fra srcset.
+    -->
+
   </main>
 </body>
 </html>
