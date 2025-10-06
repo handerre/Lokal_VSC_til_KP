@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wrapper</title>
+  <link rel="stylesheet" href="../CSS/Grid_flex.css">
+</head>
+<body>
+
+  <div class="wrapper"> 
+
+    <div class="grid-container">
+
+      <header class="grid-header">
+        <h1>Wrapper</h1>
+      </header>
+
+    <main id="maincontent" class="grid-main">
+        <div class="flex-container">
+            Forklaring av wrapper (eller container)
+Wrapper eller wrapper-element er et fundamentalt konsept i HTML og CSS. Det fungerer som en generell beholder som primært brukes til å strukturere, gruppere og style innholdet på en nettside.
+Nøkkelegenskaper og Funksjon
+	1. En Konvensjon, Ikke et Påbud: Bruken av et <div>-element med en klasse som <div class="wrapper"> er ikke et formelt krav i HTML eller CSS. Det er derimot en svært utbredt konvensjon for å kontrollere layouten og plasseringen av innholdet inni beholderen.
+	2. Ingen Spesifikk Innebygd Funksjon: Selve navnet wrapper (eller container) har ingen spesiell funksjon i HTML eller CSS-standarden. Funksjonaliteten kommer utelukkende fra CSS-reglene du knytter til klassen. Du kunne like gjerne kalt den bokseksjon eller mitt_hovedområde.
+	3. Fordeler: Semantikk og Vedlikehold: For utviklere gir navnet wrapper umiddelbar semantisk klarhet og forenkler vedlikeholdet. Det signaliserer at elementets hovedrolle er å "pakke inn" (wrap) innholdet og styre den generelle utformingen, som maksimal bredde, sentrering og padding. Dette er ansett som god praksis.
+
+Wrapperens Rolle i Responsivt Design
+Wrapper-klassen er helt sentral for responsivitet og er hjørnesteinen i moderne responsivt webdesign. Den er nøkkelkomponenten som sørger for at innholdet vises korrekt og er lesbart på tvers av alle skjermstørrelser, fra mobil til stor skjerm.
+Konsept	Forklaring
+Max-Width (Store Skjermer)	Wrapperen definerer innholdets maksimale bredde (f.eks. 1200px) og sentrerer det på skjermen. Dette er avgjørende fordi uten den ville teksten strekke seg helt ut til kantene på en stor skjerm, noe som gjør det svært vanskelig å lese.
+Responsivitet (Alle Skjermer)	Wrapperen bruker ofte regler som width: 90% og max-width: 1200px. På Små/Mobile Skjermer: Wrapperen krymper proporsjonalt (f.eks. til 90% av skjermbredden), noe som gir en nødvendig liten margin (pustrom) langs kantene. På Store Skjermer: Wrapperen stopper å vokse ved max-width (f.eks. 1200px) og blir stående sentrert, noe som sikrer optimal lesbarhet.
+
+Kort sagt sikrer wrapper  at nettstedets hovedinnhold alltid er lesbart, sentrert og skalert riktig i forhold til brukerens skjerm, noe som er grunnmuren i god front-end-utvikling.
+          </div>
+      </main>
+
+      <footer class="grid-footer">
+        <p>&copy; 2025 min nettside</p>
+      </footer>
+
+    </div>
+
+  </div> </body>
+</html>

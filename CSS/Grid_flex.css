@@ -5,6 +5,17 @@ body {
   background-color: #f4f4f4; /* Setter en lys bakgrunnsfarge */
 }
 
+/* 1. Wrapper/Container for å begrense bredde og sentrere innholdet */
+.wrapper {
+  /* Definerer maksimal bredde for lesbarhet på store skjermer */
+  max-width: 1200px; 
+  /* Sentrerer elementet horisontalt i nettleservinduet */
+  margin-left: auto;
+  margin-right: auto;
+  /* Legger til litt padding på sidene for mobil/små skjermer */
+  padding: 0 15px;
+}
+
 /* 1. CSS GRID for det overordnede layoutet */
 .grid-container {
   display: grid; /* Gjør beholderen til en grid-beholder */
