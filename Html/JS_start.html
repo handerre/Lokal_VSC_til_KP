@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- Angir at dokumentet følger HTML5-standarden -->
+<html lang="no"> <!-- Setter sidens språk til norsk -->
+<head>
+  <!-- Tegnsett (UTF-8) støtter norske tegn som æ, ø, å -->
+  <meta charset="UTF-8" />
+  <!-- Viewport gjør siden responsiv på mobil og nettbrett -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Sidetittel som vises i nettleserfanen -->
+  <title>Hvordan få JavaScript inn på en nettside</title>
+
+  <!-- Bruk Grid_flex.css for samme layout som index.html -->
+  <link rel="stylesheet" href="../CSS/Grid_flex.css" />
+  <!-- JS_start.css inneholder side-spesifikke stiler -->
+  <link rel="stylesheet" href="../CSS/JS_start.css" />
+
+  <!-- Koble til JavaScript-filen i JS-mappen. defer sikrer at scriptet kjøres etter DOM er ferdig. -->
+  <script src="../JS/JS_Start.js" defer></script>
+</head>
+<body>
+  <!-- Hovedwrapper og grid-container som gir samme side-oppsett som på index.html -->
+  <div class="grid-container wrapper">
+
+    <!-- Header: tittel og beskrivelse -->
+    <header class="grid-header">
+      <!-- Hovedoverskrift som sier hva siden handler om -->
+      <h1>Hvordan få JavaScript inn på en nettside</h1>
+      <!-- Kort forklaring under tittelen -->
+      <p>Eksempler på ulike måter å bruke JavaScript i HTML</p>
+    </header>
+
+    <!-- Main: hovedinnhold, plassert i grid-main -->
+    <main class="grid-main">
+      <!-- Flex-container: holder seksjonene som korte kort (cards) -->
+      <div class="flex-container">
+
+        <!-- Seksjon 1: Inline script-eksempel -->
+        <section class="flex-item">
+          <!-- Overskrift for seksjonen -->
+          <h2>1. Inline script</h2>
+          <!-- Kort forklaring: dette viser hvordan skript kan legges direkte i HTML -->
+          <p>Denne koden ligger direkte i HTML-filen:</p>
+          <!-- Kodeeksempel flyttet til egen fil for bedre lesbarhet og for å unngå linter-varsler -->
+          <p>Fullt kodeeksempel for inline script finnes i <a href="JS_examples.md">JS_examples.md</a>.</p>
+          <!-- Knapp: onclick-attributt kaller en JS-funksjon definert i JS-fila eller inline -->
+          <button onclick="inlineExample()">Klikk for å kjøre inline script</button>
+        </section>
+
+        <!-- Seksjon 2: Ekstern fil -->
+        <section class="flex-item">
+          <h2>2. Ekstern fil (script.js)</h2>
+          <!-- Forklaring: bruk <script src="fil.js"> for å koble til ekstern JS -->
+          <p>Denne koden ligger i en egen fil og lastes med <code>&lt;script src="script.js" defer&gt;</code>.</p>
+          <!-- Knapp: JS legger til en click-lytter på denne knappen når DOM er klar -->
+          <button id="externalBtn">Klikk for å kjøre ekstern JavaScript</button>
+        </section>
+
+  <!-- Seksjon 3: Defer vs Async forklaring -->
+  <section class="flex-item">
+    <h2>3. Defer og Async</h2>
+    <!-- defer: script kjøres etter at HTML er tolket; async: kjøres så snart den er lastet -->
+    <p><code>defer</code> venter til DOM-en er klar, mens <code>async</code> kjører så snart filen er lastet.</p>
+  <!-- Eksempel og forklaring er flyttet til JS_examples.md -->
+  <p>Se <a href="JS_examples.md">JS_examples.md</a> for eksempler på <code>defer</code> og <code>async</code>.</p>
+  </section>
+
+        <!-- Seksjon 4: Vente på DOM -->
+        <section class="flex-item">
+          <h2>4. Vente på DOM</h2>
+          <!-- Bruk DOMContentLoaded for å kjøre kode når DOM er klar -->
+          <p>Se <a href="JS_examples.md">JS_examples.md</a> for eksempel på <code>DOMContentLoaded</code>.</p>
+          <p>Demonstrerer hvordan du kan vente på at DOM-er ferdig før du kjører kode.</p>
+        </section>
+
+        <!-- Seksjon 5: Dynamisk innlasting -->
+        <section class="flex-item">
+          <h2>5. Dynamisk innlasting</h2>
+          <!-- Viser funksjonen som kan benyttes for å laste script dynamisk -->
+          <p>Se <a href="JS_examples.md">JS_examples.md</a> for koden som demonstrerer dynamisk innlasting av skript.</p>
+          <!-- Knapp som JS bruker for å starte dynamisk innlasting -->
+          <button id="loadScriptBtn">Last ekstra script dynamisk</button>
+        </section>
+
+  <!-- Seksjon 6: Moduler (ES Modules) -->
+  <section class="flex-item">
+    <h2>6. Modul (ES Modules)</h2>
+    <p>Eksempel på export/import brukt i separate filer (krever modulstøtte).</p>
+    <!-- Viser en kort modul-illustrasjon: math.js eksporterer en funksjon, main.js importerer den -->
+  <p>Fullstendige kodeeksempler (inkl. ES module-eksempel) er flyttet til <a href="JS_examples.md">JS_examples.md</a>.</p>
+  </section>
+
+        <!-- Seksjon 7: Feilsøking -->
+        <section class="flex-item">
+          <h2>7. Feilsøking</h2>
+          <!-- Tips: bruk devtools for å se feil og nettverksforespørsler -->
+          <p>Åpne utviklerverktøy (F12) og sjekk Console for feilmeldinger og nettverksforespørsler.</p>
+        </section>
+
+      </div> <!-- slutt flex-container -->
+    </main> <!-- slutt main.grid-main -->
+
+    <!-- Footer med samme stil som index -->
+    <footer class="grid-footer">
+      <p>🧑‍💻 Laget for læring av JavaScript – 2025</p>
+    </footer>
+
+  </div> <!-- slutt wrapper -->
+</body>
+</html>
