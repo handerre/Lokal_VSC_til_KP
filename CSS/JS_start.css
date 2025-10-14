@@ -1,64 +1,13 @@
-/* Kropp (body): alle sider arver disse grunnleggende stilene */
-body {
-  /* Font-familie: systemfont for rask lasting og god lesbarhet */
-  font-family: "Segoe UI", Arial, sans-serif;
-  /* Linjehøyde for bedre lesbarhet */
-  line-height: 1.6;
-  /* Fjerner standard margin og padding for å få full kontroll over layout */
-  margin: 0;
-  padding: 0;
-  /* Lys bakgrunnsfarge */
-  background: #f8fafc;
-  /* Standard tekstfarge */
-  color: #222;
-}
 
-/* Gjør box-sizing enklere å regne med: inkluder padding og border i bredde/høyde */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
 
-/* Header-styling: tittelområdet øverst på siden */
-header {
-  /* Lys blå bakgrunn for å skille header fra hovedinnhold */
-  background: #e6f0ff;
-  /* Sentrerer innholdet i header */
-  text-align: center;
-  /* Rom rundt innholdet */
-  padding: 1.5rem;
-  /* Lett bunnramme for visuell adskillelse */
-  border-bottom: 2px solid #cce0ff;
-}
+/* Hovedinnholdets container: begrenser bredde og sentrerer
+  Skopet til main som ikke bruker .grid-main, slik .grid-main fra Grid_flex.css gjelder */
+*/
 
-/* Overstyring for Grid_flex.css: gjør grid-header/main/footer lysere for denne side */
-/* (Overstyring fjernet - bruk Grid_flex.css for grid-stilene) */
 
-/* Hovedinnholdets container: begrenser bredde og sentrerer */
-main {
-  /* Maksimal bredde for god lesbarhet */
-  max-width: 900px;
-  /* Sentraliserer main med margin auto og gir topp/bunn-avstand */
-  margin: 2rem auto;
-  /* Litt padding innvendig for mobil */
-  padding: 0 1rem;
-}
 
-/* Layout for kortene (default = mobil/små skjermer) */
-/* På små skjermer vil kortene stables vertikalt (kolonne) for bedre lesbarhet */
-.flex-container {
-  display: flex;            /* Bruk flexbox */
-  flex-direction: column;   /* Stabler elementene vertikalt på små skjermer */
-  gap: 12px;                /* Litt mindre gap når de er stablet */
-  align-items: stretch;     /* Kortene fyller tilgjengelig bredde */
-  width: 100%;              /* Sikre at container ikke overstiger foreldrebredden */
-}
 
-.flex-item {
-  width: 100%;              /* Ta full bredde i kolonne-layout */
-  max-width: none;          /* Ikke begrens bredde når de stables */
-  flex: 1 1 auto;           /* La elementene vokse og krympe etter behov på små skjermer */
-  box-sizing: border-box;   /* Inkluder padding i width for å hindre horisontal overflow */
-}
+
 
 /* Hver seksjon vises som et kort (card) */
 section {
@@ -105,14 +54,7 @@ code {
   color: #d63384; /* Fremhev kode med farge */
 }
 
-/* Footer-stil */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #f1f7ff;
-  border-top: 1px solid #cce0ff;
-  margin-top: 2rem;
-}
+
 
 /* Sørg for at det er plass til 2 .flex-item per rad på store skjermer */
 /* Sørg for at det er plass til 2 .flex-item per rad på store skjermer */

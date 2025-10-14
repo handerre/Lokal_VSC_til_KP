@@ -69,3 +69,47 @@ a:hover {
   font-size: large; /* Endrer skriftstørrelse */
 }
 
+/* Hver seksjon vises som et kort (card) */
+section {
+  background: white; /* Kortets bakgrunn */
+  border: 1px solid #ddd; /* Tynn ramme */
+  border-radius: 10px; /* Runde hjørner */
+  padding: 1rem 1.5rem; /* Innvendig luft */
+  margin-bottom: 1.5rem; /* Avstand mellom kortene */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Lett skygge for dybde */
+}
+
+/* Stil for seksjonstitler */
+h2 {
+  color: #0a4ea1;
+}
+
+/* Standard knappestil */
+button {
+  background: #0a66c2; /* Blå knappfarge */
+  color: white; /* Hvitt tekst på knapp */
+  border: none; /* Ingen standard ramme */
+  padding: 0.6rem 1rem; /* Innvendig padding */
+  border-radius: 8px; /* Runde hjørner */
+  cursor: pointer; /* Peger ved hover */
+  transition: background 0.2s; /* Jevn overgang ved hover */
+}
+
+/* Hover-effekt for knapper */
+button:hover {
+  background: #084b91; /* Mørkere blå ved hover */
+}
+
+/* Preformatert tekst (kodeblokker) */
+pre {
+  background: #f1f1f1; /* Lys bakgrunn for kode */
+  border-radius: 6px;
+  padding: 0.8rem;
+  overflow-x: auto; /* Skroll hvis linjer er for lange */
+}
+
+/* Inline code-styling */
+code {
+  font-family: Consolas, monospace;
+  color: #d63384; /* Fremhev kode med farge */
+}
