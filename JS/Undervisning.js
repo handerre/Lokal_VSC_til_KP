@@ -35,3 +35,32 @@ if (alder >= 18){
 console.log("Voksen");}
 else {
 console.log("Barn");}
+
+
+/**
+ * Kategoriserer et gitt tall som positivt, negativt eller null.
+ *
+ * @param {number} tall - Tallet som skal kategoriseres.
+ * @returns {string} En tekst som beskriver tallets kategori.
+ */
+function kategoriserTall(tall) {
+  if (tall > 0) {
+    return "Tallet er positivt.";
+  } else if (tall < 0) {
+    return "Tallet er negativt.";
+  } else {
+    // Hvis tallet ikke er større enn 0 og ikke mindre enn 0,
+    // må det være lik 0.
+    return "Tallet er null.";
+  }
+}
+// Eksempler på bruk:
+console.log(`Input: 5  -> Resultat: ${kategoriserTall(5)}`);
+console.log(`Input: -3 -> Resultat: ${kategoriserTall(-3)}`);
+console.log(`Input: 0  -> Resultat: ${kategoriserTall(0)}`);
+/*Forklaring
+	1. function kategoriserTall(tall): Definerer en funksjon som tar parameteren tall.
+	2. if (tall > 0): Sjekker først om tall er større enn null (positivt). Hvis sant, returneres "Tallet er positivt." og resten av koden i if/else blokken ignoreres.
+	3. else if (tall < 0): Hvis den første if-testen var usann, sjekkes det deretter om tall er mindre enn null (negativt). Hvis sant, returneres "Tallet er negativt.".
+	4. else: Hvis ingen av de to foregående betingelsene ($> 0 eller $`< 0$) var sanne, må tallet være lik null. Dette er standard-utførelsen, og "Tallet er null." returneres.
+*/
