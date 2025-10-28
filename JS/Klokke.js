@@ -16,7 +16,7 @@ function oppdaterKlokke() {
     let sekunder = String(nå.getSeconds()).padStart(2, "0");
 
     // Setter inn teksten for klokke-elementet i formatet HH:MM:SS
-    klokkeElement.textContent = `${timer}:${minutter}:${sekunder}`;
+    klokkeElement.textContent = `Klokken er nå: ${timer}:${minutter}:${sekunder}`;
 
     // Definerer innstillinger for hvordan datoen skal vises (norsk format)
     const options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };

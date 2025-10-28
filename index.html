@@ -74,14 +74,10 @@
         <footer class="grid-footer"> <!-- Bunntekst med copyright og dynamiske elementer -->
             <p>&copy; 2025 min nettside</p> <!-- Opphavsrettstekst -->
             <p id="klokke"></p> <!-- Her vises klokken via JavaScript -->
-            <p Klokken er: id="dato"></p> <!-- Her vises datoen via JavaScript -->
-            <!-- Lenke som brukeren kan klikke for å starte prompt-dialogene -->
-            <p><a href="" id="promptLink" onclick="event.preventDefault(); if (typeof runPrompt === 'function') { runPrompt(); } else { console.warn('runPrompt er ikke tilgjengelig.'); }">Klikk her for å skrive inn navn og alder</a></p>
-            <!-- Her vises resultatet fra promt (navn + alder) -->
-            <p id="promptResult" aria-live="polite"></p> <!-- aria-live="polite": Instruksjon for skjermlesere — les opp oppdateringer høflig (vent til brukeren er ledig), ikke avbryt aktiv tale. -->
+            <p id="dato"></p> <!-- Her vises datoen via JavaScript -->
+            
             <script src="JS/Klokke.js"></script> <!-- Knytter til JavaScript-fil som styrer klokke/dato -->
-            <!-- Last inn promt-funksjonaliteten (ligger nå i JS/promt.js) -->
-            <script src="JS/promt.js"></script>
+            
         </footer>
     </div>
 </body>
