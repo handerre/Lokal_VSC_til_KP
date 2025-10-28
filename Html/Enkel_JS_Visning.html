@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+				<p id="resultat" aria-live="polite"></p> <!-- aria-live="polite": Instruksjon for skjermlesere — les opp oppdateringer høflig (vent til brukeren er ledig), ikke avbryt aktiv tale. -->
+
+				<script>
+				// Starter en umiddelbart utført funksjon (IIFE) for å unngå globale variabler
+				(function () {
+					// Definerer funksjonen 'hilsen' som returnerer en tekststreng
+					function hilsen() { // Funksjonsdeklarasjon
+						// Returner en tekst som skal vises i HTML
+						return "Hei, verden! Dette er resultatet fra funksjonen internt i html."; // returverdi
+					} // slutten av funksjonen hilsen
+
+					// Hent referansen til elementet som skal vise resultatet
+					const element = document.getElementById("resultat"); // null hvis ikke funnet
+
+					// Sjekk at elementet finnes før vi prøver å endre det
+					if (element) { // hvis element er funnet
+						// Sett tekstinnholdet i elementet ved å kalle hilsen()
+						element.textContent = hilsen(); // trygg innsetting av tekst
+					} else { // hvis elementet ikke finnes
+						// Logg en advarsel til konsollen for debugging
+						console.warn('Element #resultat ikke funnet.');
+					}
+
+				})(); // avslutt og kjør IIFE
+				</script>
+
+
+	<p id="testresultatet" aria-live="polite"></p> <!-- aria-live="polite": Instruksjon for skjermlesere — les opp oppdateringer høflig (vent til brukeren er ledig), ikke avbryt aktiv tale. -->
+
+	<script src="../JS/Enkel_JS_Visning.js"></script>
+
+
+</body>
+</html>

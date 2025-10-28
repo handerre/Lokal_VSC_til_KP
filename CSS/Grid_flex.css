@@ -113,3 +113,10 @@ code {
   font-family: Consolas, monospace;
   color: #d63384; /* Fremhev kode med farge */
 }
+
+/* Lokalt resultatområde under prompt-knappen */
+#promptResultLocal {
+  margin-top: 0.25rem; /* Litt luft over resultatet */
+  color: #0a4ea1; /* Synlig farge som matcher titler */
+  font-weight: 600;
+}

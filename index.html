@@ -46,10 +46,17 @@
                         Your browser does not support the audio element.
                         </audio>
                     </p> 
+                    <p><a href="Html/Enkel_JS_Visning.html">Et eksempel</a></p>
                     <p><a href="Html/JS_start.html">Hvordan få JS til å vises på en nettside</a></p>
-                </aside>
+                    <!-- Synlig knapp for å starte prompt-funksjonen (ekstra synlig) -->
+                    <p>
+                        <button type="button" id="promptBtn" onclick="if (typeof runPrompt === 'function') { runPrompt(); } else { console.warn('runPrompt er ikke tilgjengelig.'); }">Start prompt (navn + alder)</button>
+                    </p>
+                    <!-- Lokalt resultatområde plassert rett under knappen -->
+                    <p id="promptResultLocal" aria-live="polite"></p> <!-- aria-live="polite": Instruksjon for skjermlesere — les opp oppdateringer høflig (vent til brukeren er ledig), ikke avbryt aktiv tale. -->
+               </aside>
                 
-                <aside class="flex-item"> <!-- Sideinnhold relatert til SQL og databaser -->
+                <aside class="flex-item"> Sideinnhold relatert til SQL og databaser
                     <h2>SQL</h2>
                     <p><a href="https://www.w3schools.com/sql/default.asp" target="_blank" rel="noopener noreferrer">W3schools - SQL</a></p>
                  
@@ -67,7 +74,13 @@
             <p>&copy; 2025 min nettside</p> <!-- Opphavsrettstekst -->
             <p id="klokke"></p> <!-- Her vises klokken via JavaScript -->
             <p Klokken er: id="dato"></p> <!-- Her vises datoen via JavaScript -->
+            <!-- Lenke som brukeren kan klikke for å starte prompt-dialogene -->
+            <p><a href="" id="promptLink" onclick="event.preventDefault(); if (typeof runPrompt === 'function') { runPrompt(); } else { console.warn('runPrompt er ikke tilgjengelig.'); }">Klikk her for å skrive inn navn og alder</a></p>
+            <!-- Her vises resultatet fra promt (navn + alder) -->
+            <p id="promptResult" aria-live="polite"></p> <!-- aria-live="polite": Instruksjon for skjermlesere — les opp oppdateringer høflig (vent til brukeren er ledig), ikke avbryt aktiv tale. -->
             <script src="JS/Klokke.js"></script> <!-- Knytter til JavaScript-fil som styrer klokke/dato -->
+            <!-- Last inn promt-funksjonaliteten (ligger nå i JS/promt.js) -->
+            <script src="JS/promt.js"></script>
         </footer>
     </div>
 </body>
