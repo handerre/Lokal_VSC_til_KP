@@ -19,7 +19,7 @@ function oppdaterKlokke() {
     klokkeElement.textContent = `Klokken er nå: ${timer}:${minutter}:${sekunder}`;
 
     // Definerer innstillinger for hvordan datoen skal vises (norsk format)
-    const options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
+    const options =  { weekday: "long", year: "numeric", month: "long", day: "numeric" };
     // Setter inn teksten for dato-elementet, f.eks. "tirsdag 23. september 2025"
     datoElement.textContent = nå.toLocaleDateString("no-NO", options);
 }

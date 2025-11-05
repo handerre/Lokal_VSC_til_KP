@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt Eksempel</title>
+</head>
+<body>
+  <!-- En overskrift som ønsker brukeren velkommen -->
+  <h1>Velkommen til Prompt Eksempel</h1>
+  
+  <!-- En knapp som brukeren kan klikke på for å starte promptet -->
+  <button onclick="visHilsen()">Klikk her for å skrive inn navnet ditt</button>
+  
+  <!-- Et tomt avsnitt der vi skal vise meldingen etter at brukeren har skrevet inn navnet -->
+  <p id="hilsenid"></p>
+  <script>
+    // Funksjon som kjører når knappen blir klikket
+    function visHilsen() {
+      // Ber brukeren om å skrive inn navnet sitt
+      const navn = prompt("Hva heter du?");
+      
+      // Sjekker om brukeren faktisk skrev noe
+      if (navn) {
+        // Lager en melding basert på brukerens input
+        const hilsen = `Hei, ${navn}! Hyggelig å møte deg!`;
+        
+        // Viser meldingen som en popup
+        alert(hilsen);
+        
+        // Skriver meldingen til konsollen
+        console.log(hilsen);
+        
+        // Viser meldingen på nettsiden ved å oppdatere innholdet i <p>-elementet med id="hilsen"
+        document.getElementById("hilsenid").textContent = hilsen;
+      } else {
+        // Hvis brukeren ikke skriver noe, vis en annen melding
+        alert("Du skrev ikke inn noe navn!");
+        
+        // Oppdaterer nettsiden med en melding om at brukeren ikke skrev noe
+        document.getElementById("hilsenid").textContent = "Du skrev ikke inn noe navn!";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -12,8 +12,15 @@ console.log(antall);
 console.log(sum);
 
 //Del 2
-const navn = "Bent";
-const hilsen =`Hei, ${navn}`;
+// Definerer en variabel "navn" og setter verdien til strengen "Bent"
+const navn = "Bent"; 
+
+// Lager en ny variabel "hilsen" og bruker en template literal (backticks ``) 
+// for å lage en dynamisk streng. `${navn}` setter inn verdien av variabelen "navn" i strengen.
+const hilsen = `Hei, ${navn} du er kul ....;)`; 
+
+// Skriver ut verdien av variabelen "hilsen" til konsollen.
+// I dette tilfellet vil det skrive ut: "Hei, Bent"
 console.log(hilsen);
 
 
@@ -23,7 +30,7 @@ console.log(erStudent);
 
 let rest = 10% 3;
 
-console.log(hilsen + ", " + sum +", " + erVoksen + ", " + antall + ", " + rest);
+console.log(hilsen + `Hei, ${navn} du er kul ....;)` + ", " + sum +", " + erVoksen + ", " + antall + ", " + rest);
 
 //Del 3
 let fem = 5;
@@ -35,6 +42,9 @@ if (alder >= 18){
 console.log("Voksen");}
 else {
 console.log("Barn");}
+
+
+
 
 
 /**
