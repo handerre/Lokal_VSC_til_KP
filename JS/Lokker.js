@@ -1,8 +1,8 @@
-// Dette eksempelet viser hvordan vi kan bruke både en for-løkke og en while-løkke
-// for å iterere gjennom tall og utføre forskjellige oppgaver.
+/* Dette eksempelet viser hvordan vi kan bruke både en for-løkke og en while-løkke
+for å iterere gjennom tall og utføre forskjellige oppgaver.
 
-// FOR-LØKKE: Skriver ut tallene fra 1 til 5
-// En for-løkke brukes når vi vet hvor mange ganger vi vil iterere.
+FOR-LØKKE: Skriver ut tallene fra 1 til 5
+En for-løkke brukes når vi vet hvor mange ganger vi vil iterere. */
 console.log("For-løkke: Skriver ut tallene fra 1 til 5");
 for (let i = 1; i <= 5; i++) {
   // 1. Vi starter med i = 1.
@@ -21,10 +21,10 @@ while (count > -0) {
   count--; // Reduserer verdien av count med 1 etter hver iterasjon.
 }
 
-// Oppsummering:
-// - For-løkken er nyttig når vi vet hvor mange ganger vi vil iterere (her: 5 ganger).
-// - While-løkken er nyttig når vi har en betingelse som må oppfylles (her: count > 0).
-// Begge løkkene hjelper oss med å automatisere repeterende oppgaver i koden.
+/* Oppsummering:
+    - For-løkken er nyttig når vi vet hvor mange ganger vi vil iterere (her: 5 ganger).
+    - While-løkken er nyttig når vi har en betingelse som må oppfylles (her: count > 0).
+Begge løkkene hjelper oss med å automatisere repeterende oppgaver i koden.*/
 
 
 console.log("While-løkke som sjekker etter partall og oddetall");
