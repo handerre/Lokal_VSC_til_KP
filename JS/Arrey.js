@@ -18,7 +18,7 @@ console.log(frukter[0]); // "Eple" (første element, indeks 0)
 frukter.push("Mango"); // Nå inneholder arrayet ["Eple", "Banan", "Appelsin", "Druer", "Mango"]
 
 // 3. Viser alle frukter 
-console.log(frukter); // 4 (antall elementer i arrayet)
+console.log(frukter); // 5 (antall elementer i arrayet)
 
 // 4. Fjerner det siste elementet fra arrayet
 frukter.pop(); // Nå inneholder arrayet ["Eple", "Banan", "Appelsin", "Druer"]
