@@ -15,7 +15,7 @@ for (let i = 1; i <= 5; i++) {
 // En while-løkke brukes når vi har en betingelse som må oppfylles for å fortsette.
 console.log("While-løkke: Teller ned fra 5 til 1");
 let count = 5; // Starter med å definere en variabel count og setter den til 5.
-while (count > -0) {
+while (count > 0) {
   // 1. Løkken kjører så lenge betingelsen (count > 0) er sann.
   console.log(count); // Skriver ut verdien av count til konsollen.
   count--; // Reduserer verdien av count med 1 etter hver iterasjon.

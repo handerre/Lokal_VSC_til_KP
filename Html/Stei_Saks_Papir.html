@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stein, Saks, Papir</title>
+    <style>
+        /* Styling for hele nettsiden */
+        body {
+            font-family: Arial, sans-serif; /* Setter skrifttypen til Arial */
+            text-align: center; /* Sentraliserer all tekst */
+            margin: 0; /* Fjerner standard margin */
+            padding: 0; /* Fjerner standard padding */
+            background-color: #f4f4f4; /* Setter en lys grå bakgrunnsfarge */
+        }
+
+        /* Styling for overskriften */
+        h1 {
+            color: #333; /* Setter fargen til mørk grå */
+            margin-top: 20px; /* Legger til litt avstand på toppen */
+        }
+
+        /* Styling for knappene */
+        button {
+            margin: 10px; /* Legger til mellomrom rundt knappene */
+            padding: 10px 20px; /* Gjør knappene større med innvendig padding */
+            font-size: 16px; /* Setter skriftstørrelsen */
+            cursor: pointer; /* Endrer musepekeren til en hånd når du holder over knappen */
+            border: none; /* Fjerner standard kantlinje */
+            border-radius: 5px; /* Gjør knappene avrundet */
+            background-color: #007BFF; /* Setter en blå bakgrunnsfarge */
+            color: white; /* Gjør teksten hvit */
+            transition: background-color 0.3s; /* Legger til en jevn overgangseffekt når fargen endres */
+        }
+
+        /* Styling for knappene når musen holdes over */
+        button:hover {
+            background-color: #0056b3; /* Endrer bakgrunnsfargen til en mørkere blå */
+        }
+
+        /* Styling for resultat-diven */
+        #resultat {
+            margin-top: 20px; /* Legger til litt avstand på toppen */
+            font-size: 18px; /* Setter skriftstørrelsen */
+            color: #555; /* Setter en mellomgrå farge for teksten */
+        }
+    </style>
+</head>
+<body>
+    <!-- Hovedoverskrift for nettsiden -->
+    <h1>Stein, Saks, Papir</h1>
+
+    <!-- Instruksjonstekst -->
+    <p>Velg et alternativ:</p>
+
+    <!-- Knappene for brukerens valg -->
+    <!-- Når en knapp trykkes, kalles funksjonen "spill" med spillerens valg som argument -->
+    <button onclick="spill('stein')">Stein</button>
+    <button onclick="spill('saks')">Saks</button>
+    <button onclick="spill('papir')">Papir</button>
+
+    <!-- En tom div der resultatet av spillet vil bli vist -->
+    <div id="resultat"></div>
+
+    <script>
+        // Funksjonen som håndterer spillet
+        function spill(spillerValg) {
+            // En liste med mulige valg for maskinen
+            let valg = ["stein", "saks", "papir"];
+
+            // Generer maskinens valg ved å velge et tilfeldig element fra listen
+            // Math.random() genererer et tilfeldig desimaltall mellom 0 (inkludert) og 1 (ikke inkludert).
+            // Vi multipliserer dette tallet med lengden på listen "valg" for å få et tall mellom 0 og antall elementer i listen.
+            // Math.floor() runder ned til nærmeste heltall for å sikre at vi får en gyldig indeks i listen.
+            let dataMaskinValg = valg[Math.floor(Math.random() * valg.length)];
+
+            // Eksempel:
+            // Hvis Math.random() gir 0.5 og listen har 3 elementer:
+            // 0.5 * 3 = 1.5
+            // Math.floor(1.5) = 1
+            // Maskinens valg blir elementet på indeks 1 i listen, som er "saks".
+
+            // Start med å vise maskinens valg
+            let resultatTekst = "Maskinen valgte: " + dataMaskinValg + "<br>";
+
+            // Sjekk om det er uavgjort
+            if (spillerValg === dataMaskinValg) {
+                resultatTekst += "Uavgjort!";
+            } 
+            // Sjekk om spilleren vinner
+            else if (spillerValg === "stein" && dataMaskinValg === "saks") {
+                resultatTekst += "Du vant! Stein slår saks.";
+            } else if (spillerValg === "saks" && dataMaskinValg === "papir") {
+                resultatTekst += "Du vant! Saks slår papir.";
+            } else if (spillerValg === "papir" && dataMaskinValg === "stein") {
+                resultatTekst += "Du vant! Papir slår stein.";
+            } 
+            // Hvis ingen av de ovennevnte betingelsene er oppfylt, taper spilleren
+            else {
+                resultatTekst += "Du tapte!";
+            }
+
+            // Oppdater innholdet i resultat-diven med resultatet
+            document.getElementById("resultat").innerHTML = resultatTekst;
+        }
+    </script>
+</body>
+</html>
