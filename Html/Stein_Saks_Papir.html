@@ -64,44 +64,49 @@
 
     <script>
         // Funksjonen som håndterer spillet
+        // spillerValg: forventet verdi er en av 'stein', 'saks' eller 'papir'
         function spill(spillerValg) {
-            // En liste med mulige valg for maskinen
+            // Liste med mulige valg for maskinen
             let valg = ["stein", "saks", "papir"];
 
-            // Generer maskinens valg ved å velge et tilfeldig element fra listen
-            // Math.random() genererer et tilfeldig desimaltall mellom 0 (inkludert) og 1 (ikke inkludert).
-            // Vi multipliserer dette tallet med lengden på listen "valg" for å få et tall mellom 0 og antall elementer i listen.
-            // Math.floor() runder ned til nærmeste heltall for å sikre at vi får en gyldig indeks i listen.
+            // Velg et tilfeldig element fra listen:
+            // - Math.random() gir et tall i [0, 1)
+            // - Multipliser med valg.length for å få et tall i [0, valg.length)
+            // - Math.floor(...) gir en heltallsindeks 0..valg.length-1
             let dataMaskinValg = valg[Math.floor(Math.random() * valg.length)];
 
-            // Eksempel:
-            // Hvis Math.random() gir 0.5 og listen har 3 elementer:
-            // 0.5 * 3 = 1.5
-            // Math.floor(1.5) = 1
-            // Maskinens valg blir elementet på indeks 1 i listen, som er "saks".
-
-            // Start med å vise maskinens valg
+            // Bygg opp tekst som skal vises. Her bruker vi <br> for linjeskift
+            // fordi vi setter innerHTML nedenfor. Alternativt kan man bruke
+            // to separate elementer og setTextContent for bedre a11y.
             let resultatTekst = "Maskinen valgte: " + dataMaskinValg + "<br>";
 
-            // Sjekk om det er uavgjort
+            // 1) Sjekk om det er uavgjort
             if (spillerValg === dataMaskinValg) {
                 resultatTekst += "Uavgjort!";
-            } 
-            // Sjekk om spilleren vinner
+            }
+            // 2) Sjekk de tre tilfellene hvor spilleren vinner
+            // Stein slår saks, saks slår papir, papir slår stein
             else if (spillerValg === "stein" && dataMaskinValg === "saks") {
                 resultatTekst += "Du vant! Stein slår saks.";
             } else if (spillerValg === "saks" && dataMaskinValg === "papir") {
                 resultatTekst += "Du vant! Saks slår papir.";
             } else if (spillerValg === "papir" && dataMaskinValg === "stein") {
                 resultatTekst += "Du vant! Papir slår stein.";
-            } 
-            // Hvis ingen av de ovennevnte betingelsene er oppfylt, taper spilleren
+            }
+            // 3) Alle andre tilfeller betyr at maskinen vinner
             else {
                 resultatTekst += "Du tapte!";
             }
 
-            // Oppdater innholdet i resultat-diven med resultatet
-            document.getElementById("resultat").innerHTML = resultatTekst;
+            // Oppdater DOM: hent referanse til resultat-elementet
+            // Vi gjør en defensiv sjekk slik at koden ikke feiler hvis
+            // elementet mangler (f.eks. ved feil i HTML eller ved gjenbruk).
+            var resultEl = document.getElementById("resultat");
+            if (resultEl) {
+                // Her bruker vi innerHTML fordi vi har en <br> i teksten.
+                // For ren tekst uten HTML anbefales resultEl.textContent = ...
+                resultEl.innerHTML = resultatTekst;
+            }
         }
     </script>
 </body>
